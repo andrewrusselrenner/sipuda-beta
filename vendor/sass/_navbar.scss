@@ -1,0 +1,149 @@
+//Navigation Bar SASS File
+//Edit preferensi navbar disini
+
+#mainNav {
+    min-height: 43px;
+    background-color:  map-get($theme-colors, 'secondary');
+  
+    .navbar-toggler {
+      font-size: 80%;
+      padding: 0.75rem;
+      color: white;
+      border: 2px solid white;
+      &:focus {
+        outline: none;
+      }
+    }
+    .navbar-brand {
+      color:  map-get($theme-colors, 'light');
+      font-weight: 700;
+      padding: .2rem 0;
+    }
+    .navbar-nav {
+      .nav-item {
+        &:hover {
+          color: fade(white, 80%);
+          outline: none;
+          border-bottom-color: map-get($theme-colors, 'primary');
+          border-bottom-width: 5px;
+        }
+        &:active,
+        &:focus {
+          outline: none;
+          background-color: transparent;
+        }
+      }
+    }
+    @media (min-width: 992px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      /*padding-left: 17%;*/
+      background-color: transparent;
+      transition: background-color 0.3s ease-in-out;
+      .navbar-brand {
+        padding: .1rem ;
+        color: fade-out(map-get($theme-colors, 'primary'), .5);
+      }
+      .nav-link {
+        transition: none;
+        padding: 2rem .5rem;
+        color: fade-out(map-get($theme-colors, 'dark'), .5);
+        font-weight: 500;
+        &:hover {
+          color: map-get($theme-colors, 'primary');
+          /*
+          color: fade-out(map-get($theme-colors, 'secondary'), .25);
+  
+          border-bottom-color: map-get($theme-colors, 'primary');
+          border-bottom-width: 5px;*/
+        }
+        &:active {
+          color: map-get($theme-colors, 'secondary');
+          font-weight: 12px;
+          /*border-bottom-color: map-get($theme-colors, 'bghover');
+          border-bottom-width: 5px;*/
+        }
+      }
+      &.navbar-shrink {
+        background-color: map-get($theme-colors, 'primary');
+        .navbar-brand {
+          color: white;
+        }
+        .nav-link {
+          color: darken(white, 15%);
+          padding: 1.5rem 1.5rem 1.25rem;
+          border-bottom: 0.25rem solid transparent;
+          &:hover {
+            color: white;
+            /*border-bottom-color: map-get($theme-colors, 'bghover');
+            border-bottom-width: 5px;*/
+          }
+          &:active {
+            color: darken(map-get($theme-colors, 'bghover'), 15%);
+          }
+          &.active {
+            color: white;
+            outline: none;
+            border-bottom: 0.25rem solid map-get($theme-colors, 'secondary');
+          }
+        }
+      }
+    }
+  }
+  
+  
+  /*
+  * Animate state between .navbar and .navbar-ontop *
+  .navbar {
+    transition: background-color .5s ease-out;
+  }
+  
+  .navbar-ontop {
+    background-color: transparent !important;
+    color : #4f70ce;
+    opacity: 1;
+  }
+  
+  .navbar-ontop::placeholder{
+    color : #4f70ce;
+    opacity: 1;
+  }
+  
+  * Animate on entrance *
+  
+  .animate-in-down {
+    transition: all 1.3s ease-out;
+      position:relative;
+    opacity:1;
+    top:0px;
+    &.out-of-viewport {
+      top:40px;
+      opacity:0;
+    }
+  }
+  
+  
+  .animate-in-left {
+    transition: all 1.0s ease-out;
+      position:relative;
+    opacity:1;
+      left:0%;
+    &.out-of-viewport {
+      opacity:0;
+        left:-5%;
+    }
+  }
+  
+  
+  .animate-in-right {
+    transition: all 1.0s ease-out;
+      position:relative;
+    opacity:1;
+      left:0%;
+    &.out-of-viewport {
+      opacity:0;
+      left:5%;
+    }
+  } */
+  

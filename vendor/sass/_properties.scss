@@ -1,0 +1,36 @@
+// properties values
+.cover {
+    min-height: 100%;
+   }
+   
+   .inset-shadowed {
+     box-shadow: inset 0px 0px 45px #555;
+   }
+   
+   .shadowed {
+     box-shadow: 0px 0px 5px #555;
+   }
+
+   .bg-aquamarine {
+	background: linear-gradient(-30deg, transparentize(theme-color("secondary"), 0.1) 0%, transparentize(theme-color("primary"), 0.1) 50%, transparentize(theme-color("primary"), 0.05) 100%);
+  color:white;
+}
+
+.img-thumbnail {
+  border:0px;
+  padding:10px;
+}
+
+/*
+.carousel {
+	.carousel-caption {
+    padding-top:50px;
+    padding-bottom:20px;
+	  bottom:0px;
+		background: linear-gradient(transparent 10%, transparentize(theme-color("dark"), 0.05) 100%);}
+  .carousel-control-next, .carousel-control-prev {
+    opacity:0.85;}
+  .carousel-indicators {
+    bottom: 0px;
+  }
+}*/

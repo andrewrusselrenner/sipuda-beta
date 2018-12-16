@@ -1,0 +1,71 @@
+//sections properties
+
+.section-awuo {
+    position: relative;
+    color:white;
+    background-size:cover;
+    background-position: center;
+      &:before {
+      position: absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height: 100%;
+      content: ' ';
+      background: linear-gradient(to bottom right, transparentize(theme-color("primary"), 0.9) 0%, transparentize(theme-color("secondary"), 0.5) 100%);
+    }
+  }
+  
+  .section-dark {
+    position: relative;
+    color:map-get($theme-colors, 'light');
+    background-size:cover;
+    background-position: center;
+      &:before {
+      position: absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height: 100%;
+      content: ' ';
+      background: rgba(map-get($theme-colors, 'dark'), 0.6);
+    }
+  }
+  
+  .section-light {
+    position: relative;
+    color:map-get($theme-colors, 'dark');
+    background-size:cover;
+    background-position: center;
+      &:before {
+      position: absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height: 100%;
+      content: ' ';
+      background: rgba(map-get($theme-colors, 'light'), 0.6);
+    }
+  }
+  
+  .section-lighttwo {
+    position: relative;
+    color:map-get($theme-colors, 'dark');
+    background-size:cover;
+    background-position: center;
+      &:before {
+      position: absolute;
+      top:0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      content: ' ';
+      background: rgba(map-get($theme-colors, 'light'), 0.6);
+    }
+  }
+  
+  .section-parallax {
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
+  }

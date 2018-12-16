@@ -1,0 +1,42 @@
+.photo-thumb{
+    width: 214px;
+    height: 214px;
+    float: left;
+    border: thin solid $primary;
+    margin: 0 1em 1em 0;
+}
+
+.account-wall{
+    margin-top: 40px;
+    padding: 40px 0px 20px 0px;
+    background-color: $light;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
+
+.login-title{
+    color: $secondary;
+    font-size: 22px;
+    font-weight: 400;
+    display: block;
+}
+
+.profile-img{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 50%;
+}
+
+.select-name{
+    display: block;
+    margin: 30px 10px 10px;
+}
+
+.logo-img{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 50%;
+}

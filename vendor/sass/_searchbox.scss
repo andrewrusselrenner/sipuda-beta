@@ -1,0 +1,54 @@
+//property of search box
+
+.search-box {
+    position: relative;
+  }
+  
+  .search-box .fa-search {
+    position: relative;
+    padding: 25px;
+    pointer-events: none;
+    left: 15px;
+    top: 0px;
+    color: map-get($theme-colors, 'white');
+    background: map-get($theme-colors, 'primary');
+  }
+  
+  .search-box .fa-search:before {
+    color: map-get($theme-colors, 'light');
+    /*background-color: $white;*/
+    transition: all 0.2s linear;
+  }
+  
+  .search-box input {
+    color: map-get($theme-colors, 'dark');
+    padding-left: 60px;
+    background: map-get($theme-colors, 'primary');
+    border: 0;
+    outline: none !important;
+    transition: all 0.2s linear;
+  }
+  
+  .search-box input:focus {
+    background: white !important;
+    outline: 0;
+    color: #333;
+  }
+  
+  .search-box input:focus + .fa-search:before {
+    color: $body-color;
+  }
+  
+  .search-box input:hover {
+    background: $bghover;
+  }
+  
+  .search-box input::placeholder {
+    color : white;
+    opacity: 1;
+  }
+  
+  .search-box input:focus::placeholder {
+    color: map-get($theme-colors, 'dark');
+    opacity: 1;
+  }

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400');
+@import '../node_modules/bootstrap/scss/bootstrap';
+/*@import '../node_modules/bootstrap/scss/functions';*/
+@import 'variables';
+@import 'themecolors';
+@import 'mixin';
+
+//properties
+$body-bg: white;
+$body-color: #333;
+$body-color-inverse: invert($body-color) !default;
+$link-color: #b7dae1;
+
+// Components
+$border-width: 1px !default;
+
+// Buttons
+$input-btn-padding-y-lg:    .55rem;
+$input-btn-padding-x-lg:    1.2rem;
+$input-btn-padding-x:       1rem !default;
+
+// Cards
+$card-border-width:        0px;
+$card-bg:                  map-get($theme-colors, 'light');
+
+// Breadcrumb
+$breadcrumb-bg: transparent !default;
+
+// Carousel
+$carousel-caption-width:            					100% !default;
+$carousel-indicator-height:                   6px !default;
+
+html,body {
+   height:100%;
+}
+
+body > * {
+  background-position: center;
+  background-size: cover;
+}
+
+@import 'sections';
+@import 'properties';
+//@import 'carousel';
+
+/*
+Kode input wraper tapi buat jaga-jaga.
+.input-wrapper {
+  position: relative;
+  width: 98%;
+}
+
+.input-wrapper:before {
+  content: "
+*/
+
+@import 'navbar';
+
+.fa-search {
+  color: map-get($theme-colors, 'white');
+}
+
+@import 'searchbox';
+@import 'hoverborder';
+@import 'loginanimated';
+@import 'anggota';

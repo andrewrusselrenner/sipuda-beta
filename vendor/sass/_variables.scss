@@ -1,0 +1,46 @@
+//theme and others colours variables
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400');
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded:            false !default;
+$enable-shadows:            true;
+$enable-transitions:        true;
+$enable-hover-media-query:  false;
+$enable-grid-classes:       true;
+$enable-print-styles:       true;
+
+$spacer: 1.5rem;
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 960px);
+
+// Variables
+//
+// Colors
+
+$white: white !default;
+$primary: #46adc2 !default;
+$secondary: #4f70ce !default;
+$light: #f3f3f3 !default;
+$dark: #151515 !default;
+$info: #7cdfb3 !default;
+$success: #28a745 !default;
+$warning: #ffc107 !default;
+$danger: #dc3545 !default;
+$bghover: #B0E7F9 !default;
+$oranye: rgb(233, 136, 10) !default;
+
+// Fonts
+$font-family-base: Roboto;
+$display-font-family: Roboto;
+$lead-font-size:   1.30rem;
+$font-size-base:  1rem;
+$font-weight-light: 300;
+$font-weight-normal: 200;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+$line-height-base:  1.5;
+$headings-font-family: Roboto;
+$headings-font-weight: $font-weight-normal;
+$headings-line-height: 1.2;

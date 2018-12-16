@@ -1,0 +1,44 @@
+//@import '../node_modules/bootstrap/scss/functions';
+
+// warna tema, jangan lupa edit juga di _variables.scss soalnya susah mapping nya error terus
+$theme-colors: (
+    white: white,
+    primary: #46adc2,
+    secondary: #4f70ce,
+    light: #f3f3f3,
+    dark: #151515,
+    info: #7cdfb3,
+    success: #28a745,
+    warning: #ffc107,
+    danger: #dc3545,
+    bghover: #B0E7F9,
+    oranye: rgb(233, 136, 10)
+);
+
+/*theme colours
+$theme-colors: (
+    white: white,
+    primary: #46adc2,
+    secondary: #4f70ce,
+    light: #f3f3f3,
+    dark: #151515,
+    info: #7cdfb3,
+    success: $success,
+    warning: $warning,
+    danger: $danger,
+    bghover: $bghover
+);
+*/
+
+// Color yiq
+@each $name, $value in $theme-colors {
+    .bg-#{$name} {
+      color: color-yiq($value);
+         input::placeholder {
+        color: transparentize(color-yiq($value), .2);
+      }
+      .input-group-text {
+        color: color-yiq($value);
+      }
+    }
+  }

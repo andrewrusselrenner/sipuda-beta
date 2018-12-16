@@ -1,0 +1,19 @@
+// animasi hover garis bawah di navbar
+
+.anime-link {
+    display: inline-block;
+  }
+  
+  .anime-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $oranye;
+    transition: width .3s;
+  }
+  
+  .anime-link:hover::after {
+    width: 100%;
+  }
+  

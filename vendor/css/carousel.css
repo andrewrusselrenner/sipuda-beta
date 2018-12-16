@@ -1,0 +1,60 @@
+@media (min-width: 768px) {
+  /* show 3 items */
+  carouselSip-inner .active,
+  carouselSip-inner .active + .carousel-itemSip,
+  carouselSip-inner .active + .carousel-itemSip + .carousel-itemSip {
+    display: block;
+  }
+  carouselSip-inner .carousel-itemSip.active:not(.carousel-itemSip-right):not(.carousel-itemSip-left),
+  carouselSip-inner .carousel-itemSip.active:not(.carousel-itemSip-right):not(.carousel-itemSip-left) + .carousel-itemSip,
+  carouselSip-inner .carousel-itemSip.active:not(.carousel-itemSip-right):not(.carousel-itemSip-left) + .carousel-itemSip + .carousel-itemSip {
+    -webkit-transition: none;
+    transition: none;
+  }
+  carouselSip-inner .carousel-itemSip-next,
+  carouselSip-inner .carousel-itemSip-prev {
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  carouselSip-inner .active.carousel-itemSip + .carousel-itemSip + .carousel-itemSip + .carousel-itemSip {
+    position: absolute;
+    top: 0;
+    right: -33.3333%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+  /* left or forward direction */
+  .active.carousel-itemSip-left + .carousel-itemSip-next.carousel-itemSip-left,
+  .carousel-itemSip-next.carousel-itemSip-left + .carousel-itemSip,
+  .carousel-itemSip-next.carousel-itemSip-left + .carousel-itemSip + .carousel-itemSip,
+  .carousel-itemSip-next.carousel-itemSip-left + .carousel-itemSip + .carousel-itemSip + .carousel-itemSip {
+    position: relative;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  /* farthest right hidden item must be abso position for animations */
+  carouselSip-inner .carousel-itemSip-prev.carousel-itemSip-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+  /* right or prev direction */
+  .active.carousel-itemSip-right + .carousel-itemSip-prev.carousel-itemSip-right,
+  .carousel-itemSip-prev.carousel-itemSip-right + .carousel-itemSip,
+  .carousel-itemSip-prev.carousel-itemSip-right + .carousel-itemSip + .carousel-itemSip,
+  .carousel-itemSip-prev.carousel-itemSip-right + .carousel-itemSip + .carousel-itemSip + .carousel-itemSip {
+    position: relative;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
+/*# sourceMappingURL=carousel.css.map */
