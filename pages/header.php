@@ -25,5 +25,4 @@ include($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
   <!-- Script: Animated entrance -->
   <script src="<?php echo $home_url."/vendor/js/animate-in.js"?>"></script>
   <script src="<?php echo $home_url."/vendor/js/anime.min.js"?>"></script>
-  <?php include('script.php'); ?>
 </head>
