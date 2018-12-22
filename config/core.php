@@ -6,13 +6,19 @@ error_reporting(E_ALL);
 if(!isset($_SESSION)) 
 { 
   session_start(); 
-} 
+}
 
 // atur default zona waktu, pake WITA Makassar
 date_default_timezone_set('Asia/Makassar');
 
 // url halaman beranda
-$home_url="http://localhost:80/";
+$home_url="localhost/";
+
+// atau halaman berandanya disini
+if(!defined('BASE_URL')) define('BASE_URL', 'http://localhost/');
+
+// mendefinisikan direktori file-file php
+if(!defined('ROOT_PATH')) define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT']);
 
 // page given in URL parameter , default page is one (mbob opo iki)
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
