@@ -2,8 +2,8 @@
   <div class="container-fluid">
     <div class="row my-3 mx-auto col-md-6 p-3 section-lighttwo">
       <div class="mx-auto col-md-6 p-3">
-        <h1>Catalog</h1>
-        <?php echo "<p class='mb-12'>Temukan buku &quot;".$query."&quot; dikatalog perpustakaan disini! Jangan lupa lihat nomor panggilnya ya! ;) </p>";
+        <h1>Hasil Pencarian</h1>
+        <?php echo "<p class='mb-12'>Temukan buku dengan kata kunci &quot;".$query."&quot; dikatalog perpustakaan disini! Hasil pencarian ada dibawah ya! ;) </p>";
       echo "</div>";
       include($_SERVER['DOCUMENT_ROOT'].'/models/searchbar.php');
         ?>
