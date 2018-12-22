@@ -1,6 +1,8 @@
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'].'/config/db_conn.php');
+include($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
+
+$page_title = 'Hasil Pencarian';
 include('header.php');
 include('navbar.php');
 
