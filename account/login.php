@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 include('login-engine.php');
 
 $page_title = 'Akun SIPUDA';
@@ -33,7 +33,7 @@ include_once(ROOT_PATH.'/pages/header.php');
                 <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                 <small class="form-text text-muted text-right">
                     <p class="mb-0 mt-2"><a href="lupasandi.php"> Lupa Kata Sandi?</a></p>
-                    <p><a href="registrasi.php"> Buat Akun</a></p>
+                    <p><a href="daftar.php"> Buat Akun</a></p>
                 </small> 
             </div> 
             <button type="submit" name="masuk" class="loginmodal-submit g-recaptcha btn btn-outline-primary btn-lg w-50" data-callback="submitForm" data-badge="inline">Masuk</button>
