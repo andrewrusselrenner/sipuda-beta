@@ -1,6 +1,6 @@
 <?php 
 include($_SERVER['DOCUMENT_ROOT'].'/config/metadata.php');
-include($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     -->
   <!-- Pake kustom theme -->
-  <link rel="stylesheet" href="<?php echo BASE_URL."/vendor/css/theme.css" ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo BASE_URL."vendor/css/theme.css" ?>" type="text/css">
 
   <!-- Gambar ikon (favicon)-->
   <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png">
@@ -41,19 +41,76 @@ include($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  <link rel="shortcut icon" href="<?php echo BASE_URL."/images/favicon/favicon.ico"?>"/>
+  <link rel="shortcut icon" href="<?php echo BASE_URL."images/favicon/favicon.ico"?>"/>
 
   <!-- Script: Animated entrance -->
-  <script src="<?php echo BASE_URL."/vendor/js/animate-in.js"?>"></script>
-  <script src="<?php echo BASE_URL."/vendor/js/anime.min.js"?>"></script>
-  <script src='https://www.google.com/recaptcha/api.js?render=6Lf5uIMUAAAAADHtXa6nf0S7XsX1LkVR3yrJmhB7'></script>
-  <script>
-  grecaptcha.ready(function() {
-    grecaptcha.execute('6Lf5uIMUAAAAADHtXa6nf0S7XsX1LkVR3yrJmhB7', {action: 'masuk'})
-    .then(function(token) {
-      var recaptchaResponse = document.getElementById('recaptchaResponse');
-      recaptchaResponse.value = token;
-    });
-  });
+  <script src="<?php echo BASE_URL."vendor/js/animate-in.js"?>"></script>
+  <script src="<?php echo BASE_URL."vendor/js/anime.min.js"?>"></script>
+
+  <?php
+  $loginpage = '/account/login';
+  $sekenlogin = '/account/login.php';
+  $signuppage = '/account/daftar';
+  $sekendaftar = '/account/daftar.php';
+  $currentpage = $_SERVER['REQUEST_URI'];
+  
+  if($currentpage == $loginpage || $currentpage == $sekenlogin)
+  {
+    ?>
+    <script src='https://www.google.com/recaptcha/api.js?render=<?php echo GCSITE_KEY ?>'></script>
+    <script>
+      grecaptcha.ready(function() {
+        grecaptcha.execute(<?php echo GCSITE_KEY ?>, {action: 'masuk'})
+        .then(function(token) {
+        var recaptchaResponse = document.getElementById('recaptchaResponse');
+        recaptchaResponse.value = token;
+        });
+      });
+    </script>
+    <?php
+  }
+  else if($currentpage == $signuppage || $currentpage == $sekendaftar)
+  {
+    ?>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+    function pwvalidasi()
+    {
+        if(document.daftar.sandi.value!= document.daftar.konfirmasikatasandi.value)
+        {
+            alert("Kata Sandi dan Konfirmasi Kata Sandi harus sama!");
+            document.daftar.konfirmasikatasandi.focus();
+            
+            return false;
+        }
+        return true;
+    }
 </script>
+
+<script>
+    function cekEmail() 
+    {
+        $("#loaderIcon").show();
+        jQuery.ajax(
+        {
+            url: "./models/ceksurel.php",
+            data:'surel='+$("#surel").val(),
+            type: "POST",
+        
+            success:function(data)
+            {
+                $("#statusemail").html(data);
+                $("#loaderIcon").hide();
+            },
+        error:function (){}
+        });
+    }
+</script>
+    <?php
+  }
+  else
+  {
+     //Nothing
+  }
+  ?>
 </head>
