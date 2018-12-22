@@ -10,7 +10,7 @@ if(isset($_POST['masuk']))
 
         // Build POST request:
         $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-        $recaptcha_secret = '6Lf5uIMUAAAAAOw5uFGDdFYKpaT9Ut-AUMZotIjN';
+        $recaptcha_secret = GCSECRET_KEY;
         $recaptcha_response = $_POST['recaptcha_response'];
     
         // Make and decode POST request:
