@@ -5,6 +5,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous" style=""></script>
 <!-- Material design js -->
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<!-- Masonry JS -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <!-- Script: Smooth scrolling between anchors in the same page -->
 <script src="../vendor/js/smooth-scroll.js"></script>
 <script src="../vendor/js/jquery-easing/jquery.easing.min.js"></script>
