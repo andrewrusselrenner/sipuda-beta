@@ -14,6 +14,14 @@ date_default_timezone_set('Asia/Makassar');
 // url halaman beranda
 $home_url="localhost/";
 
+// Google ReCaptcha V2 (Checkbox) Setting Disini
+if(!defined('GSECRET_KEY')) define('GSECRET_KEY', '6LevK4QUAAAAAHCpg2O0kbnSAioXNh7KZTZO-pYO');
+if(!defined('GSITE_KEY')) define('GSITE_KEY', '6LevK4QUAAAAAFqmQHpzTlK7HGYNq9hGl5iW2UGg');
+
+// Google ReCaptcha V3 Setting Disini
+if(!defined('GCSECRET_KEY')) define('GCSECRET_KEY', '6LcmLYQUAAAAABVTn05T8F_sn2nSRHgd49gTmYei');
+if(!defined('GCSITE_KEY')) define('GCSITE_KEY', '6LcmLYQUAAAAAH7EnCZy_Aw-GIn1rW63Ka9W7IHt');
+
 // atau halaman berandanya disini
 if(!defined('BASE_URL')) define('BASE_URL', 'http://localhost/');
 
