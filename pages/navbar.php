@@ -63,7 +63,7 @@
               <a class="nav-link anime-link" href="/account/login">Masuk</a> 
             </li>
             <li class="nav-item"> 
-              <a class="nav-link anime-link" href="/account/register">Daftar</a>
+              <a class="nav-link anime-link" href="/account/daftar">Daftar</a>
             </li>
         <?php
           }
