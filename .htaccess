@@ -1,21 +1,20 @@
+RewriteEngine On
+
 #Fix Rewrite
 Options -Multiviews
 
 # Mod Rewrite
 Options +FollowSymLinks
-RewriteEngine On
-# RewriteBase /
+RewriteBase /
 
 # dipakai untuk hilangin ekstensi halaman php termasuk "contoh.com/masuk.php" menjadi "contoh.com/masuk"
-RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
 
 # Return 404 if original request is .php
-RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
-RewriteRule .* - [L,R=404]
-
+# RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+# RewriteRule .* - [L,R=404]
 
 # Disable directory browsing 
 Options -Indexes
@@ -32,7 +31,7 @@ DirectoryIndex index.html index.php /index.php
     Allow from all
 </Files>
 
-<FilesMatch search.php|viewBook.php>
+<FilesMatch search.php|viewBook.php|pinjam.php|login.php|index.php|logout.php>
     Order Allow,Deny
     Allow from all
 </FilesMatch>
