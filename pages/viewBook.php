@@ -1,8 +1,8 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'].'/config/db_conn.php');
+require($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
 require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 
-$lihatbuku = $db->prepare('SELECT * FROM buku WHERE nomor_panggil = :nomor_panggil');
+$lihatbuku = $dbs->prepare('SELECT * FROM buku WHERE nomor_panggil = :nomor_panggil');
 $lihatbuku->execute(array(':nomor_panggil' => $_GET['nopang']));
 $baris = $lihatbuku->fetch();
 
@@ -13,6 +13,7 @@ if($baris['nomor_panggil'] == '')
     exit;
 }
 
+$page_title = $baris['judul_buku'];
 include('header.php');
 include('navbar.php');
 ?>
@@ -96,8 +97,19 @@ include('navbar.php');
                     echo "<br class='card-text' />";
                     echo "<p class='card-text'>Terdapat ".$baris['lbr_halaman']." halaman dibuku ini.</p>";
                     echo "<p class='card-text'><i>".$baris['kategori']."</i></p>";
-
-                    echo "<a href='pinjam.php?action=".$baris['id_buku']."' class='btn btn-outline-primary btn-lg'>Pinjam</a>";
+                    
+                    if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota')
+                    {
+                      include("pinjam.php");
+                      /*
+                      echo "<button type='button' class='btn btn-outline primary btn-lg' data-toggle='modal' data-target='#myModal'>";
+                      */
+                    
+                      echo "<a href='pinjam.php?action=".$baris['id_buku']."' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#pinjamModal'>Pinjam</a>";
+                    } else
+                    {
+                      // Nothing happened lel
+                    }
                 echo "</div>";
                 echo "</div>";
             echo "<div class='col-4'>";
@@ -138,93 +150,46 @@ include('navbar.php');
       </div>
     </div>
       <div class="row my-5">
-        <div class="col-md-6">
-            
-          <h3 class="text-center">Checkout History&nbsp;<span class="badge badge-light"> New</span></h3>
+        <div class="col-md-12">
+          <h3 class="text-center">Buku Salinan&nbsp;<span class="badge badge-light"> Baru</span></h3>
           <hr class="bg-primary">
           <div class="table-responsive">
             <table class="table table-striped table-borderless">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
+                  <th scope="col">No.</th>
+                  <th scope="col">Nama Buku</th>
+                  <th scope="col">Tahun Terbit</th>
+                  <th scope="col">ISBN</th>
+                  <th scope="col">Nomor Panggil</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
+                  <td>Earthfall</td>
+                  <td>2014</td>
+                  <td>192018662</td>
+                  <td>CA-110</td>
                 </tr>
                 <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
+                <th scope="row">2</th>
+                  <td>Earthfall</td>
+                  <td>2014</td>
+                  <td>121309080</td>
+                  <td>CA-111</td>
                 </tr>
                 <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
+                  <<th scope="row">3</th>
+                  <td>Earthfall</td>
+                  <td>2014</td>
+                  <td>648273001</td>
+                  <td>CA-112</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-        <div class="col-md-6">
-          <h3 class="text-center">On Hold&nbsp;<span class="badge badge-light"> New</span></h3>
-          <hr class="bg-primary">
-          <div class="table-responsive">
-            <table class="table table-striped table-borderless">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="text-center mx-auto col-lg-8 col-10">
-          <h1 class="mb-3">Carousel</h1>
-          <div id="carousel1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
-            <div class="carousel-inner">
-              <div class="carousel-item active"> <img class="d-block w-100" src="https://static.pingendo.com/cover-moon.svg"> </div>
-              <div class="carousel-item"> <img class="d-block w-100" src="https://static.pingendo.com/cover-bubble-light.svg"> </div>
-              <div class="carousel-item"> <img class="d-block w-100" src="https://static.pingendo.com/cover-bubble-dark.svg"> </div>
-            </div>
-            <ol class="carousel-indicators">
-              <li data-target="#carousel1" data-slide-to="0" class="active"> </li>
-              <li data-target="#carousel1" data-slide-to="1"> </li>
-              <li data-target="#carousel1" data-slide-to="2"> </li>
-            </ol>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 <?php
