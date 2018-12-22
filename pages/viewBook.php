@@ -50,6 +50,8 @@ include('navbar.php');
   <div class="py-3 px-3">
     <div class="container-fluid">
       <div class="row">
+      <!-- Untuk kolom disamping
+           Rencananya untuk daftar isi.
         <div class="col-md-4">
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center"> Cras justo odio <span class="badge badge-primary badge-pill">14</span> </li>
@@ -57,6 +59,7 @@ include('navbar.php');
             <li class="list-group-item d-flex justify-content-between align-items-center"> Morbi leo risus <span class="badge badge-primary badge-pill">1</span> </li>
           </ul>
         </div>
+        -->
         <div class="col-md-8 mx-auto">
           <div class="card">
             <div class="row no-gutter">
