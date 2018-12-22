@@ -4,7 +4,7 @@
       <!--
         nanti logo taro disini
       -->
-      <a class="navbar-brand js-scroll-trigger " href=<?php echo $home_url ?>>Sipuda Web App</a>
+      <a class="navbar-brand js-scroll-trigger " href=<?php echo BASE_URL ?>>Sipuda Web App</a>
       <!-- kalo misalnya layarnya tambah mengecil -->
       <button class="navbar-toggler navbar-toggler-right shadow p-3" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="text-shadow: black 0px 0px 8px;"> Menu <i class="fa fa-bars"></i>
         <!--<span class="navbar-toggler-icon"></span>-->
@@ -26,45 +26,49 @@
           <li class="nav-item"> 
             <a class="nav-link js-scroll-trigger anime-link" href="/pages/about.php">Tentang</a> 
           </li>
-
-
-<!--
-          ?php
-          Cek jika si anggota sudah masuk
+        </ul>
+          <ul class="navbar-nav mx-3">
+          <?php
+          //Cek jika si anggota sudah masuk
           //jika sudah masuk, tampilkan opsi "Akun Saya" dan "Keluar"
-          if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['level_akses']=='Anggota'){
+          if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota')
+          {
             ?>
-          <ul class="navbar-nav mx-6">
-          <li class="nav-item" ?php echo $page_title=="Akun Saya" ? "class='active'" : "" ?>> 
-            <a class="nav-link anime-link" href="?php echo $home_url; ?>/account/index.php">Halo ?php echo $_SESSION['nama_depan']; ?>!</a> 
-          </li>
-          <li class="nav-item"> 
-            <a class="nav-link anime-link" href="?php echo $home_url; ?>/account/logout.php">Keluar</a> 
-          </li>
-        </ul>
-        ?php
+            
+              <li class="nav-item" <?php /*echo $page_title=="Akun Saya" ? "class='active'" : ""; */?>> 
+                <a class="nav-link anime-link" href="<?php echo ROOT_PATH; ?>account/index.php">Akun Saya</a> 
+              </li>
+              <li class="nav-item"> 
+                <a class="nav-link anime-link" href="<?php echo BASE_URL; ?>account/logout.php">Keluar</a> 
+              </li>
+            <?php
           }
-
-          //jika si anggota belm masuk, maka tampilkan tombol "masuk" dan "registrasi"
-          else {
-          ?>
-          -->
-
-          <!-- Untuk login, register/myaccount, atau keluar -->
-        </ul>
-        <ul class="navbar-nav mx-6">
-          <li class="nav-item">
-            <a class="nav-link anime-link" href="/account/login">Masuk</a> 
-          </li>
-          <li class="nav-item"> 
-            <a class="nav-link anime-link" href="/account/register">Daftar</a>
-          </li>
-        </ul>
-        <!--
-        ?php
+          // Ditampilkan untuk yg punya hak akses Admin
+          else if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Admin')
+          {
+            ?>
+              <li class="nav-item" <?php /*echo $page_title=="Akun Saya" ? "class='active'" : ""; */?>> 
+                <a class="nav-link anime-link" href="<?php echo ROOT_PATH; ?>account/admin/index.php">Dasbor</a> 
+              </li>
+              <li class="nav-item"> 
+                <a class="nav-link anime-link" href="<?php echo BASE_URL; ?>account/admin/logout.php">Keluar</a> 
+              </li>
+            <?php
+          }
+          //jika si anggota belum masuk, maka tampilkan tombol "masuk" dan "registrasi"
+          else 
+          {
+            ?>
+            <li class="nav-item">
+              <a class="nav-link anime-link" href="/account/login">Masuk</a> 
+            </li>
+            <li class="nav-item"> 
+              <a class="nav-link anime-link" href="/account/register">Daftar</a>
+            </li>
+        <?php
           }
         ?>
-        -->
+        </ul>
       </div>
     </div>
   </nav>
