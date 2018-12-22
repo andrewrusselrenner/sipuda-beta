@@ -1,5 +1,9 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
+
+if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true)
+{
+
 include('login-engine.php');
 
 $page_title = 'Akun SIPUDA';
@@ -50,3 +54,10 @@ include_once(ROOT_PATH.'/pages/header.php');
 </body>
 
 </html>
+<?php
+}
+else
+{
+  header("location: ".BASE_URL."index.php");
+}
+?>
