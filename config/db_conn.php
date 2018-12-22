@@ -8,7 +8,6 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //$anggota = new User($con);
 
-
 // koneksi ke db
 $con = @mysqli_connect($servurl, $username, $password, $db_name);
 
