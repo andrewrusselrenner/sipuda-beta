@@ -1,7 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 
-if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true)
+if(empty($_SESSION['masuk']) && $_SESSION['masuk']==false)
 {
 
 include('register-engine.php');
@@ -27,10 +27,10 @@ include_once(ROOT_PATH.'/pages/header.php');
             <h1 class="text-left mt-4 font-weight-bold">Pendaftaran</h1>
             <p class="mb-3 text-left">Sudah punya akun? <a href=<?php BASE_URL."account/login";?>>Masuk</a></p>
             <?php if(isset($error_msg)){ echo $error_msg; } ?>
-            <form class="text-left" name="daftar" method="POST" id="daftar" onsubmit="return pwvalidasi();">
+            <form class="text-left" name="daftar" method="POST" id="daftarForm" onsubmit="return pwvalidasi();">
             <script>
                 function submitForm() {
-                    document.getElementById("daftar").submit();
+                    document.getElementById("daftarForm").submit();
                 }
             </script>
               <div class="form-row">
@@ -51,10 +51,12 @@ include_once(ROOT_PATH.'/pages/header.php');
               <div class="form-row">
                 <div class="form-group col-md-6"> 
                   <label for="sandi">Kata Sandi</label> 
-                  <input type="password" class="form-control" name="sandi" placeholder="Atur kata sandi yang mudah diingat" required="required"> </div>
+                  <input type="password" class="form-control" name="sandi" id="sandi" placeholder="Atur kata sandi yang mudah diingat" required="required"> </div>
                 <div class="form-group col-md-6"> 
                   <label for="konfirmasikatasandi">Konfirmasi Kata Sandi</label> 
-                  <input type="password" class="form-control" name="konfirmasikatasandi" placeholder="Masukkan kata sandi kembali" required="required"> </div>
+                  <input type="password" class="form-control" name="konfirmasikatasandi" id="konfirmasikatasandi" placeholder="Masukkan kata sandi kembali" required="required"> 
+                  <span id='message'></span>
+                </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-2">
@@ -77,7 +79,7 @@ include_once(ROOT_PATH.'/pages/header.php');
                 </div>
                 <div class="form-group col-md-4">
                   <label for="tgllahir">Tanggal Lahir</label> 
-                  <input type="date" class="form-control" id="tgllahir" required="required">
+                  <input type="date" class="form-control" name="tgllahir" id="tgllahir" required="required">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="gender">Jenis Kelamin</label>
@@ -98,11 +100,11 @@ include_once(ROOT_PATH.'/pages/header.php');
                     <option class="text-white" value="Belum Bekerja">Belum Bekerja</option>
                   </select>
                 </div>
-                <div class="form-group col-md-6"> <label for="nope">Nomor Telefon</label> <input type="number" class="form-control" id="nope" placeholder="Cth: 081234567890" required="required"> </div>
+                <div class="form-group col-md-6"> <label for="nope">Nomor Telefon</label> <input type="number" class="form-control" id="nope" name="nope" placeholder="Cth: 081234567890" required="required"> </div>
               </div>
               <div class="form-group"> 
                 <label for="almt">Alamat</label> 
-                <input type="text" class="form-control" name="almt" id="surel" placeholder="Cth: Jl. Mulawarman RT.06 No.5 Kel. Mekar Sari Balikpapan Selatan" required="required"> 
+                <input type="text" class="form-control" name="almt" placeholder="Cth: Jl. Mulawarman RT.06 No.5 Kel. Mekar Sari Balikpapan Selatan" required="required"> 
               </div>
               <div class="form-group">
                 <p> Dengan mengklik tombol "Ajukan Akun" dibawah ini, saya sudah membaca dan menyetujui <a href=<?php echo BASE_URL."pages/syaratketentuan.php" ?>>Syarat dan Ketentuan</a> baik dari sisi perpustakaan maupun situs SIPUDA ini. </p>
@@ -128,6 +130,7 @@ include_once(ROOT_PATH.'/pages/header.php');
 }
 else
 {
-  header("location: ".BASE_URL."index.php");
+  header("location: ".BASE_URL."index");
+  exit();
 }
 ?>
