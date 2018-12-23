@@ -1,7 +1,7 @@
 <?php
 if(!isset($_SESSION)) 
 { 
-  session_start(); 
+  session_start();
 }
 $_SESSION = array();
 if (ini_get("session.use_cookies")) {
@@ -14,5 +14,5 @@ if (ini_get("session.use_cookies")) {
 unset($_SESSION['masuk']);
 session_destroy(); // destroy session
 header("location:" . $_SERVER['HTTP_REFERER']);
-exit;
+exit();
 ?>
