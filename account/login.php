@@ -1,11 +1,10 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
+include($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 
-if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true)
+include_once('login-engine.php');
+
+if(empty($_SESSION['masuk']) && $_SESSION['masuk']==false)
 {
-
-include('login-engine.php');
-
 $page_title = 'Akun SIPUDA';
 include_once(ROOT_PATH.'/pages/header.php');
 ?>
@@ -36,8 +35,8 @@ include_once(ROOT_PATH.'/pages/header.php');
             <div class="form-group my-3"> 
                 <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                 <small class="form-text text-muted text-right">
-                    <p class="mb-0 mt-2"><a href="lupasandi.php"> Lupa Kata Sandi?</a></p>
-                    <p><a href="daftar.php"> Buat Akun</a></p>
+                    <p class="mb-0 mt-2"><a href="lupasandi"> Lupa Kata Sandi?</a></p>
+                    <p><a href="daftar"> Buat Akun</a></p>
                 </small> 
             </div> 
             <button type="submit" name="masuk" class="loginmodal-submit g-recaptcha btn btn-outline-primary btn-lg w-50" data-callback="submitForm" data-badge="inline">Masuk</button>
@@ -55,9 +54,12 @@ include_once(ROOT_PATH.'/pages/header.php');
 
 </html>
 <?php
+
 }
 else
 {
-  header("location: ".BASE_URL."index.php");
+  header("location: ".BASE_URL."index");
+  exit();
 }
+
 ?>
