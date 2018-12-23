@@ -18,7 +18,9 @@ RewriteRule ^(.*)$ $1.php
 
 # Disable directory browsing 
 Options -Indexes
-DirectoryIndex index.html index.php /index.php
+DirectoryIndex index.php /index.php
+
+# RewriteRule ^(.+)$ account/index.php?u=$1 [L,QSA]
 
 <Files *.php>
     Order Deny,Allow
@@ -31,7 +33,7 @@ DirectoryIndex index.html index.php /index.php
     Allow from all
 </Files>
 
-<FilesMatch search.php|viewBook.php|pinjam.php|login.php|index.php|logout.php|daftar.php|registerscript.php>
+<FilesMatch search.php|viewBook.php|pinjam.php|login.php|index.php|logout.php|daftar.php|registerscript.php|testlagi.php>
     Order Allow,Deny
     Allow from all
 </FilesMatch>
