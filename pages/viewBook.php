@@ -10,7 +10,7 @@ $baris = $lihatbuku->fetch();
 if($baris['nomor_panggil'] == '')
 {
     header('Location: ./');
-    exit;
+    exit();
 }
 
 $page_title = $baris['judul_buku'];
