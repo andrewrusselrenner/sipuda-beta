@@ -46,6 +46,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
   <!-- Script: Animated entrance -->
   <script src="<?php echo BASE_URL."vendor/js/animate-in.js"?>"></script>
   <script src="<?php echo BASE_URL."vendor/js/anime.min.js"?>"></script>
+  
+  <!-- JQuery CDN dari Microsoft -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" defer></script>
 
   <?php
   $loginpage = '/account/login';
@@ -74,18 +77,17 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
     ?>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript">
-    function pwvalidasi()
-    {
-        if(document.daftar.sandi.value!= document.daftar.konfirmasikatasandi.value)
-        {
-            alert("Kata Sandi dan Konfirmasi Kata Sandi harus sama!");
-            document.daftar.konfirmasikatasandi.focus();
-            
-            return false;
+        var check = function() {
+            if (document.getElementById('sandi').value ==
+            document.getElementById('konfirmasikatasandi').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'matching';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'not matching';
+            }
         }
-        return true;
-    }
-</script>
+    </script>
 
 <script>
     function cekEmail() 
