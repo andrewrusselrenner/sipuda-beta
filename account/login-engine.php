@@ -1,6 +1,6 @@
 <?php
 include(ROOT_PATH.'/config/dbconnection.php');
-if(isset($_SESSION['masuk'])!='')
+if(isset($_SESSION['masuk'])==false)
 {
     $_SESSION['masuk']='';
 }
@@ -17,7 +17,8 @@ if(isset($_POST['masuk']))
         $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
         $recaptcha = json_decode($recaptcha);
         
-        if (isset($recaptcha->score) >= 0.5)
+        $hasil = $recaptcha->score >= 0.5;
+        if (isset($hasil))
         {
             $email = $_POST['surel'];
             $password = $_POST['katasandi'];
