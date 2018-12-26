@@ -1,7 +1,7 @@
 <?php
 include_once('engine/index-engine.php');
 
-if(isset($_SESSION['Level_Akses'])==='Anggota')
+if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota')
 {
 $page_title = 'Halaman Profil';
 include(ROOT_PATH.'/pages/header.php');
