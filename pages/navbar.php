@@ -48,7 +48,7 @@
           {
             ?>
               <li class="nav-item" <?php /*echo $page_title=="Akun Saya" ? "class='active'" : ""; */?>> 
-                <a class="nav-link anime-link" href="<?php echo ROOT_PATH; ?>account/admin/index.php">Dasbor</a> 
+                <a class="nav-link anime-link" href="<?php echo BASE_URL; ?>account/admin/index.php">Dasbor</a> 
               </li>
               <li class="nav-item"> 
                 <a class="nav-link anime-link" href="<?php echo BASE_URL; ?>account/admin/logout.php">Keluar</a> 
