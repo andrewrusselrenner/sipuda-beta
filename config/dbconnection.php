@@ -12,12 +12,13 @@ catch (PDOException $err)
 }
 
 // koneksi ke db dengan metode MySQLi
-$con = @mysqli_connect(DBHOST, DBUSER, DBPW, DBNAME);
+$con = @mysqli_connect($dbhost, $dbuser, $dbpw, $dbname);
 
 // cek koneksi
 if (mysqli_connect_errno())
   {
-  echo "Sambungan ke database bermasalah: " . mysqli_connect_error();
+    $errmsg = "Sambungan ke database bermasalah: ";
+    throw new Exception(mysqli_connect_error(), mysqli_connect_errno());
   }
 
 ?>
