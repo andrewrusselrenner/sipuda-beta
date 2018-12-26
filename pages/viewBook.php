@@ -21,7 +21,7 @@ include('navbar.php');
   <div class="py-5 text-center section-parallax" style="background-image: url(&quot;http://hdqwalls.com/wallpapers/christopher-robin-2018-movie-poster-3r.jpg&quot;);">
     <div class="container-fluid">
       <div class="row my-3 mx-auto col-md-6 p-3 section-lighttwo">
-        <div class="mx-auto col-md-6 p-3">
+        <div class="mx-auto col-md-10 p-3">
         <?php  
           echo "<h1>".$baris['judul_buku']."</h1>";
           echo "<p class='mb-12'>".$baris['deskripsi_singkat']."</p>";
@@ -60,7 +60,7 @@ include('navbar.php');
           </ul>
         </div>
         -->
-        <div class="col-md-8 mx-auto">
+        <div class="col-md-10 mx-auto">
           <div class="card">
             <div class="row no-gutter">
               <div class="col-auto">
@@ -75,7 +75,11 @@ include('navbar.php');
                 echo "<div class='card-block px-2 flex-column'>";
                     echo "<h3 class='card-title'>".$baris['judul_buku']."</h3>";
                     echo "<p class='card-text'>".$baris['pengarang']."</p>";
-                    echo "<p class='card-text'>".$baris['tahun_terbit']."</p>";
+
+                    // ambil tahunnya saja
+                      // contoh dari 2018-05-02 menjadi 2018 saja
+                    $tahun = date("Y", strtotime($baris['tahun_terbit']));
+                    echo "<p class='card-text'>".$tahun."</p>";
                     echo "<br class='card-text' />";
 
                     //mengconvert dari angka ke string
@@ -101,18 +105,24 @@ include('navbar.php');
                     echo "<p class='card-text'>Terdapat ".$baris['lbr_halaman']." halaman dibuku ini.</p>";
                     echo "<p class='card-text'><i>".$baris['kategori']."</i></p>";
                     
-                    if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota')
+                    if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota' && $baris['status_buku']!==1)
                     {
-                      include("pinjam.php");
+                      
+                      echo "<button data-toggle='modal' data-target='#pinjamModal' data-id='".$baris['nomor_panggil']."' id='pinjam' class='btn btn-outline-primary btn-lg'> Pinjam</button>";
+                      
                       /*
-                      echo "<button type='button' class='btn btn-outline primary btn-lg' data-toggle='modal' data-target='#myModal'>";
+                      echo "<a name='pinjamBtn' id=".$baris['id_buku']."' class='btn btn-primary btn-lg' view_data'>Pinjam</a>";
                       */
-                    
-                      echo "<a href='pinjam.php?action=".$baris['id_buku']."' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#pinjamModal'>Pinjam</a>";
+
+                      //include("pinjam.php");
+                      ?> 
+                    <?php
+                      include_once("pinjamModal.php");
                     } else
                     {
                       // Nothing happened lel
                     }
+                echo "</div>";
                 echo "</div>";
                 echo "</div>";
             echo "<div class='col-4'>";
@@ -195,6 +205,40 @@ include('navbar.php');
         </div>
     </div>
   </div>
+<script>
+  $(document).ready(function(){
+	
+	$(document).on('click', '#pinjam', function(e){
+		
+		e.preventDefault();
+		
+		var uid = $(this).data('id');   // it will get id of clicked row
+		
+		$('#dynamic-content').html(''); // leave it blank before ajax call
+		$('#modal-loader').show();      // load ajax loader
+		
+		$.ajax({
+			url: 'pinjam.php',
+			type: 'POST',
+			data: 'id='+uid,
+			dataType: 'html'
+		})
+		.done(function(data){
+			console.log(data);	
+			$('#dynamic-content').html('');    
+			$('#dynamic-content').html(data); // load response 
+			$('#modal-loader').hide();		  // hide ajax loader	
+		})
+		.fail(function(){
+			$('#dynamic-content').html('<i class="fa fas-info"></i> Something went wrong, Please try again...');
+			$('#modal-loader').hide();
+		});
+		
+	});
+	
+});
+</script>
+
 <?php
 include('footer.php');
 
