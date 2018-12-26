@@ -1,8 +1,8 @@
 <?php
-if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota')
-{
 include_once('engine/index-engine.php');
 
+if(isset($_SESSION['Level_Akses'])==='Anggota')
+{
 $page_title = 'Halaman Profil';
 include(ROOT_PATH.'/pages/header.php');
 include(ROOT_PATH.'/pages/navbar.php');
@@ -141,12 +141,12 @@ include_once(ROOT_PATH.'/config/timeago-function.php');
 <?php
 include(ROOT_PATH.'/pages/footer.php');
 }
-else if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Admin')
+else if($_SESSION['Level_Akses']=='Admin')
 {
-  header("location: /admin/index");
+  header("location: /account/admin/index");
 }
 else
 {
-  header("location: ./");
+  header("location:" . $_SERVER['HTTP_REFERER']);
 }
 ?>
