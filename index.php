@@ -20,7 +20,7 @@ include('pages/header.php');
       </div>
     </div>
   </div>
-  <div class="py-5">
+  <div class="py-2">
     <div class="container-fluid" style="	max-height: 78px;">
       <div class="row justify-content-md-center">
         <h1 class="display-1 text-center" contenteditable="false">Mulai Petualanganmu!</h1>
@@ -37,96 +37,8 @@ include('pages/header.php');
       </div>
     </div>
   </div>
-  <?php include($_SERVER['DOCUMENT_ROOT'].'/models/carouselbooks.php'); ?>
-  <!--
-  <div class="py-5 my-5">
-    <div class="container-fluid my-5">
-      <h1 class="text-center mb-3">Buku baru telah tiba!</h1>
-      <div id="sipudaCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner row w-100 mx-auto">
-          <div class="carousel-item col-md-4 active">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f44242/fff" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card 1</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="http://placehold.it/800x600/418cf4/fff" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card 2</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="http://placehold.it/800x600/3ed846/fff" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card 3</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="http://placehold.it/800x600/42ebf4/fff" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card 4</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f49b41/fff" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card 5</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f4f141/fff" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card 6</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card 7</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#sipudaCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Sebelumnya</span>
-        </a>
-        <a class="carousel-control-next" href="#sipudaCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Selanjutnya</span>
-        </a>
-      </div>
-    </div>
-  </div>
--->
+  <?php include($_SERVER['DOCUMENT_ROOT'].'/models/newbook.php'); 
+  ?>
   <div class="py-2">
     <div class="container-fluid">
       <div class="row">
