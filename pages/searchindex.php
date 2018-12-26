@@ -68,7 +68,10 @@
                     echo "<div class='card-block px-2 flex-column'>";
                       echo "<h3 class='card-title'>".$results['judul_buku']."</h3>";
                       echo "<p class='card-text'>".$results['pengarang']."</p>";
-                      echo "<p class='card-text'>".$results['tahun_terbit']."</p>";
+                      // ambil tahunnya saja
+                      // contoh dari 2018-05-02 menjadi 2018 saja
+                      $tahun = date("Y", strtotime($results['tahun_terbit']));
+                      echo "<p class='card-text'>".$tahun."</p>";
                       echo "<br class='card-text' />";
 
                       //mengconvert dari angka ke string
@@ -118,6 +121,23 @@
   }
 else
   { // jika gak ketemu sama sekali
-    echo "<h4 class='text-md-center'>Pencarian tidak ditemukan :(. Coba lagi dengan kata kunci yang lain.</h4>";
+    echo "<h4 class='text-md-center display-1'>Pencarian tidak ditemukan :(. Coba lagi dengan kata kunci yang lain.</h4>";
   }
 ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 py-5 border">
+            <ul class="pagination mx-auto text-center">
+              <li><a href=<?php echo "search?q=".$query."&pageno=1"; ?>>First</a></li>
+              <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "search?q=".$query."&pageno=".($pageno - 1); } ?>">Prev</a>
+              </li>
+              <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo  "search?q=".$query."&pageno=".($pageno + 1); } ?>">Next</a>
+              </li>
+              <li><a href=<?php echo "search?q=".$query."&pageno=".$total_pages; ?>">Last</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

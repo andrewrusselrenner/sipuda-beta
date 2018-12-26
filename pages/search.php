@@ -22,9 +22,28 @@ if(strlen($query) >= $min_length)
   $query = mysqli_real_escape_string($con, $query);
   // memastikan gak ada yg coba inject SQL ;)
         
+  $table ="buku";
+  // pagination
+  if (isset($_GET['pageno'])) 
+    {
+        $pageno = $_GET['pageno'];
+    } 
+    else 
+    {
+        $pageno = 1;
+    }
+
+  $no_of_records_per_page = 10;
+  $offset = ($pageno-1) * $no_of_records_per_page;
+
+  $total_pages_sql = "SELECT COUNT(*) FROM $table";
+  $hsil = mysqli_query($con,$total_pages_sql);
+  $total_rows = mysqli_fetch_array($hsil)[0];
+  $total_pages = ceil($total_rows / $no_of_records_per_page);
+
   //sql query
-  $sql = "SELECT * FROM buku
-  WHERE (`judul_buku` LIKE '%".$query."%') OR (`isbn` LIKE '%".$query."%') OR (`nomor_panggil` LIKE '%".$query."%') OR (`pengarang` LIKE '%".$query."%')";
+  $sql = "SELECT * FROM $table
+  WHERE (`judul_buku` LIKE '%".$query."%') OR (`isbn` LIKE '%".$query."%') OR (`nomor_panggil` LIKE '%".$query."%') OR (`pengarang` LIKE '%".$query."%') LIMIT $offset, $no_of_records_per_page";
    
   /*
   ** '*' artinya pilih semua bidang, bisa juga ketik yg lebih  spesifik kaya 'id', 'judul_buku', 'pengarang'.
