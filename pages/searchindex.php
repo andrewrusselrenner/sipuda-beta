@@ -127,16 +127,16 @@ else
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-6 offset-lg-3 py-5 border">
+        <div class="col-6 offset-3 py-2">
             <ul class="pagination mx-auto text-center">
-              <li><a href=<?php echo "search?q=".$query."&pageno=1"; ?>>First</a></li>
+              <li class="page-item"><a class="page-link" href=<?php echo "search?q=".$query."&pageno=1"; ?>>Awal</a></li>
               <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
-                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "search?q=".$query."&pageno=".($pageno - 1); } ?>">Prev</a>
+                <a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "search?q=".$query."&pageno=".($pageno - 1); } ?>">Sebelumnya</a>
               </li>
               <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-                <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo  "search?q=".$query."&pageno=".($pageno + 1); } ?>">Next</a>
+                <a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo  "search?q=".$query."&pageno=".($pageno + 1); } ?>">Selanjutnya</a>
               </li>
-              <li><a href=<?php echo "search?q=".$query."&pageno=".$total_pages; ?>">Last</a></li>
+              <li class="page-item"><a class="page-link" href=<?php echo "search?q=".$query."&pageno=".$total_pages; ?>">Akhir</a></li>
             </ul>
         </div>
     </div>

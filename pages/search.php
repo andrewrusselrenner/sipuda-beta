@@ -43,7 +43,7 @@ if(strlen($query) >= $min_length)
 
   //sql query
   $sql = "SELECT * FROM $table
-  WHERE (`judul_buku` LIKE '%".$query."%') OR (`isbn` LIKE '%".$query."%') OR (`nomor_panggil` LIKE '%".$query."%') OR (`pengarang` LIKE '%".$query."%') LIMIT $offset, $no_of_records_per_page";
+  WHERE (`judul_buku` LIKE '%".$query."%') OR (`isbn` LIKE '%".$query."%') OR (`nomor_panggil` LIKE '%".$query."%') OR (`pengarang` LIKE '%".$query."%') OR (`kategori` LIKE '%".$query."%') OR (`jenis_bahan` LIKE '%".$query."%') OR (`penerbit` LIKE '%".$query."%') LIMIT $offset, $no_of_records_per_page";
    
   /*
   ** '*' artinya pilih semua bidang, bisa juga ketik yg lebih  spesifik kaya 'id', 'judul_buku', 'pengarang'.
