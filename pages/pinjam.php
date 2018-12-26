@@ -1,24 +1,31 @@
-<div class="modal fade" id="pinjamModal"> <!-- nanti diganti idnya-->
-    <div class="modal-dialog">
-        <div class="modal-content">
+<?php
+require($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
+require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 
-            <div class="modal-header">
-             <h4 class="modal-title"> Sukses</h4>
-             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
+if(isset($_REQUEST['id']))
+{
+$email  = $_SESSION['masuk'];
+$mid    = $_SESSION['id'];
 
-            <div class="modal-body text-center p-3">
-            <p class="py-2"><span class="fa fa-check-circle fa-4x"></span></p>
+//$nopang = $baris['nomor_panggil'];
+$nopang = $_POST['id'];
+
+$query2 = $dbs->prepare('INSERT INTO peminjaman (id_peminjaman, id_anggota, nomor_panggil_buku, is_accepted, tgl_peminjaman, tgl_pengembalian, tanggal_kembali) VALUES (LPAD(FLOOR(RAND() * 20000000), 7, 2), :mid, :nopang, 0, CURRENT_DATE(), DATE_ADD(CURRENT_DATE, INTERVAL 1 WEEK), NULL)');
+
+$query2->bindParam(':mid',$mid,PDO::PARAM_STR);
+$query2->bindParam(':nopang',$nopang,PDO::PARAM_STR);
+$query2->execute();
+$idpinjam = $dbs->lastInsertId();
+
+?>
+            <span class="fa fa-check-circle fa-4x"></span></p>
             <h1> Permintaan Peminjaman Sukses! </h1>
             <p>Silahkan datang ke perpustakaan dengan nomor permintaan dibawah ini untuk mengambil buku</p>
             <br />
-            <p><h2>6509</h2></p>
+            <p><h2><?php echo $idpinjam; ?></h2></p>
             </div>
-            
-            <div class="modal-footer">
-            <button tupe="button" class=" btn btn-danger" data-dismiss="modal"> Tutup </button>
+            </div>
 
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+}
+?>
