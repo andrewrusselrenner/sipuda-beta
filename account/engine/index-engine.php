@@ -63,7 +63,7 @@ else
     $diterima = 'Buku belum diterima';
 }
 */
-$sql3 = $dbs->prepare('SELECT buku.nomor_panggil,buku.judul_buku,buku.isbn,buku.tahun_terbit,peminjaman.tgl_peminjaman,peminjaman.tgl_pengembalian,peminjaman.id_peminjaman,peminjaman.tanggal_kembali from peminjaman join anggota on anggota.id=peminjaman.id_anggota join buku on buku.nomor_panggil=peminjaman.nomor_panggil_buku where anggota.surel=:mid order by peminjaman.id_peminjaman desc');
+$sql3 = $dbs->prepare('SELECT buku.nomor_panggil,buku.judul_buku,buku.isbn,buku.tahun_terbit,peminjaman.tgl_peminjaman,peminjaman.tgl_pengembalian,peminjaman.id_peminjaman,peminjaman.tanggal_kembali from peminjaman join anggota on anggota.id=peminjaman.id_anggota join buku on buku.nomor_panggil=peminjaman.nomor_panggil_buku where anggota.surel=:mid order by peminjaman.tgl_peminjaman desc');
 $sql3-> bindParam(':mid', $mid, PDO::PARAM_STR);
 $sql3->execute();
 $results3=$sql3->fetchAll(PDO::FETCH_OBJ);
