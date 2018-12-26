@@ -1,4 +1,6 @@
 <?php
+if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota')
+{
 include_once('engine/index-engine.php');
 
 $page_title = 'Halaman Profil';
@@ -138,4 +140,13 @@ include_once(ROOT_PATH.'/config/timeago-function.php');
 </div>
 <?php
 include(ROOT_PATH.'/pages/footer.php');
+}
+else if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Admin')
+{
+  header("location: /admin/index");
+}
+else
+{
+  header("location: ./");
+}
 ?>
