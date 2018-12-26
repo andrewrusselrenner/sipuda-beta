@@ -18,13 +18,13 @@
         <!-- Menu yang ditengah -->
         <ul class="navbar-nav mx-md-auto">
           <li class="nav-item"> 
-            <a class="nav-link js-scroll-trigger anime-link" href="/pages/features.php">Fasilitas</a> 
+            <a class="nav-link js-scroll-trigger anime-link" href="/pages/features">Fasilitas</a> 
           </li>
           <li class="nav-item"> 
-            <a class="nav-link js-scroll-trigger anime-link" href="/pages/catalog.php">Katalog</a> 
+            <a class="nav-link js-scroll-trigger anime-link" href="/pages/catalog">Katalog</a> 
           </li>
           <li class="nav-item"> 
-            <a class="nav-link js-scroll-trigger anime-link" href="/pages/about.php">Tentang</a> 
+            <a class="nav-link js-scroll-trigger anime-link" href="/pages/about">Tentang</a> 
           </li>
         </ul>
           <ul class="navbar-nav mx-3">
@@ -36,10 +36,10 @@
             ?>
             
               <li class="nav-item" <?php /*echo $page_title=="Akun Saya" ? "class='active'" : ""; */?>> 
-                <a class="nav-link anime-link" href="<?php echo ROOT_PATH; ?>account/index.php">Akun Saya</a> 
+                <a class="nav-link anime-link" href="<?php echo BASE_URL; ?>account/index">Akun Saya</a> 
               </li>
               <li class="nav-item"> 
-                <a class="nav-link anime-link" href="<?php echo BASE_URL; ?>account/logout.php">Keluar</a> 
+                <a class="nav-link anime-link" href="<?php echo BASE_URL; ?>account/logout">Keluar</a> 
               </li>
             <?php
           }
