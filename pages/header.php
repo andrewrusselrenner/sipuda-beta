@@ -10,6 +10,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compability" content="IE=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
   <meta name="description" content="<?php echo($description); ?>">
     <meta name="author" content="<?php echo($author); ?>">
     <title><?php echo ($page_title)." | ".($title); ?></title>
@@ -48,7 +51,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
   <script src="<?php echo BASE_URL."vendor/js/anime.min.js"?>"></script>
   
   <!-- JQuery CDN dari Microsoft -->
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" defer></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" async></script>
+  <?php include_once('script.php'); ?>
 
   <?php
   $loginpage = '/account/login';
@@ -95,7 +99,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
         $("#loaderIcon").show();
         jQuery.ajax(
         {
-            url: "./models/ceksurel.php",
+            url: "/models/ceksurel.php",
             data:'surel='+$("#surel").val(),
             type: "POST",
         

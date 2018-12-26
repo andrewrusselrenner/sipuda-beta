@@ -4,17 +4,17 @@
           <div class="col-lg-3 col-6 p-3">
             <h5> <b>Utama</b> </h5>
             <ul class="list-unstyled">
-              <li> <a href="#">Beranda</a> </li>
-              <li> <a href="#">Galeri</a> </li>
-              <li> <a href="#">Berita</a> </li>
+              <li> <a href="/">Beranda</a> </li>
+              <li> <a href="/pages/gallery">Galeri</a> </li>
+              <li> <a href="/pages/news">Berita</a> </li>
             </ul>
           </div>
           <div class="col-lg-3 col-6 p-3">
             <h5> <b>Informasi Bantuan</b> </h5>
             <ul class="list-unstyled">
-              <li> <a href="#">Pertanyaan Yang Sering Diajukan</a> </li>
-              <li> <a href="#">Daftar Pustakawan</a> </li>
-              <li> <a href="#">Ruang Perpustakaan</a> </li>
+              <li> <a href="/pages/faq">Pertanyaan Yang Sering Diajukan</a> </li>
+              <li> <a href="/pages/librarian-lists">Daftar Pustakawan</a> </li>
+              <li> <a href="/pages/rooms">Ruang Perpustakaan</a> </li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 p-3">
@@ -24,18 +24,15 @@
           <div class="col-lg-3 col-md-6 p-3">
             <h5> <b>Ikuti Kami</b> </h5>
             <div class="row">
-              <div class="col-md-12 d-flex align-items-center justify-content-between my-2"> <a href="#">
-                  <i class="d-block fa fa-facebook-official text-muted fa-lg mr-2 anime-link"></i>
-                </a> <a href="#">
-                  <i class="d-block fa fa-instagram text-muted fa-lg mx-2 anime-link"></i>
-                </a> <a href="#">
-                  <i class="d-block fa fa-google-plus-official text-muted fa-lg mx-2 anime-link"></i>
-                </a> <a href="#">
-                  <i class="d-block fa fa-pinterest-p text-muted fa-lg mx-2 anime-link"></i>
-                </a> <a href="#">
-                  <i class="d-block fa fa-reddit text-muted fa-lg mx-2 anime-link"></i>
-                </a> <a href="#">
-                  <i class="d-block fa fa-twitter text-muted fa-lg ml-2 anime-link"></i>
+              <div class="col-md-12 d-flex align-items-center justify-content-between my-2"> 
+                <a href="<?php echo FB_LINK ?>">
+                  <i class="d-block fab fa-facebook text-muted fa-lg mr-2 anime-link"></i>
+                </a> 
+                <a href="<?php echo IG_LINK ?>">
+                  <i class="d-block fab fa-instagram text-muted fa-lg mx-2 anime-link"></i>
+                </a> 
+                <a href="<?php echo TWITTER_LINK ?>">
+                  <i class="d-block fab fa-twitter text-muted fa-lg ml-2 anime-link"></i>
                 </a> </div>
             </div>
           </div>
@@ -47,7 +44,5 @@
         </div>
       </div>
     </div>
-
-    <?php include('script.php'); ?>
     </body>
 </html>
