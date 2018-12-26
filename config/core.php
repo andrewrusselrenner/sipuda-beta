@@ -62,4 +62,13 @@ spl_autoload_register(function ($class) {
       
  });
 
+
+ // Social Media Links, just insert username
+ $fb      = 'benscott28';
+ $twitter = '_ariffahmi';
+ $ig      = 'simonickalexs';
+
+if(!defined('FB_LINK')) define('FB_LINK', 'http://fb.com/'.$fb);
+if(!defined('IG_LINK')) define('IG_LINK', 'http://instagram.com/'.$ig);
+if(!defined('TWITTER_LINK')) define('TWITTER_LINK', 'http://twitter.com/'.$fb);
 ?>
