@@ -105,7 +105,7 @@ include('navbar.php');
                     echo "<p class='card-text'>Terdapat ".$baris['lbr_halaman']." halaman dibuku ini.</p>";
                     echo "<p class='card-text'><i>".$baris['kategori']."</i></p>";
                     
-                    if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota' && $baris['status_buku']!==1)
+                    if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']==='Anggota' && $baris['status_buku']!==1)
                     {
                       
                       echo "<button data-toggle='modal' data-target='#pinjamModal' data-id='".$baris['nomor_panggil']."' id='pinjam' class='btn btn-outline-primary btn-lg'> Pinjam</button>";
