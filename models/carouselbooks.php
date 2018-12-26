@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $home_url."/vendor/css/carousel.css" ?>" type="text/css">
+<link rel="stylesheet" href="<?php echo BASE_URL."vendor/css/carousel.css" ?>" type="text/css">
 <script src="../vendor/js/sipudaCarousel.js"></script>
 <div class="py-5 my-5">
     <div class="container-fluid my-5">
