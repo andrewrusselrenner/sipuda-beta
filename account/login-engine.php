@@ -33,7 +33,8 @@ if(isset($_POST['masuk']))
             {
                 foreach ($results as $result) 
                 {
-                    $_SESSION['IdAnggota'] = $result->IDAnggota && $_SESSION['Level_Akses'] = $result->level_akses && $_SESSION['id'] = $result->id;
+                    $_SESSION['Level_Akses'] = $result->level_akses; 
+                    $_SESSION['id'] = $result->id;
                     if($result->status==1 && $result->level_akses=='Anggota')
                     {
                         $_SESSION['masuk'] = $_POST['surel'];
