@@ -8,8 +8,8 @@
 <!-- Masonry JS -->
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <!-- Script: Smooth scrolling between anchors in the same page -->
-<script async src="../vendor/js/smooth-scroll.js"></script>
-<script async src="../vendor/js/jquery-easing/jquery.easing.min.js"></script>
+<script async src="<?php echo BASE_URL."vendor/js/smooth-scroll.js" ?>"></script>
+<script async src="<?php echo BASE_URL."vendor/js/jquery-easing/jquery.easing.min.js"?>"></script>
 <!--<script src="../vendor/js/sipudaCarousel.js"></script>-->
-<script async src="../vendor/js/sipuda.js"></script>
-<script async src="../vendor/js/sipuda-animelogin.js"></script>
+<script async src="<?php echo BASE_URL."vendor/js/sipuda.js"?>"></script>
+<script async src="<?php echo BASE_URL."vendor/js/sipuda-animelogin.js"?>"></script>
