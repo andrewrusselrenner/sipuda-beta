@@ -10797,6 +10797,22 @@ $theme-colors: (
   color: #212529;
 }
 
+.border {
+  border: 1px solid #888;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0px;
+  list-style: none;
+  border-radius: 0.25rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 html, body {
   height: 100%;
 }
@@ -11354,11 +11370,23 @@ input::-moz-focus-inner {
 }
 
 .profile-img {
-  width: 96px;
-  height: 96px;
+  /*
+    width: 96px;
+    height: 96px;
+    */
   margin: 0 auto 10px;
   display: block;
   border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-img > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .select-name {
