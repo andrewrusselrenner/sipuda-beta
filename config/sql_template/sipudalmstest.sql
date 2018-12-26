@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2018 at 07:32 AM
+-- Generation Time: Dec 26, 2018 at 03:55 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -32,14 +32,16 @@ USE `sipudalmstest`;
 
 DROP TABLE IF EXISTS `anggota`;
 CREATE TABLE `anggota` (
-  `id` int(8) NOT NULL,
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `IDAnggota` int(4) NOT NULL,
   `nama_depan` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `nama_belakang` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `surel` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `avatar` text COLLATE utf8_unicode_ci,
   `nohp` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `alamat` text COLLATE utf8_unicode_ci NOT NULL,
   `katasandi` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
-  `j-kartu_identitas` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `j-kartu_identitas` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `no_identitas` bigint(17) NOT NULL,
   `tempat_lahir` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `tgl_lahir` date NOT NULL,
@@ -50,7 +52,7 @@ CREATE TABLE `anggota` (
   `status` int(11) NOT NULL COMMENT '0=pending, 1=dikonfirmasi',
   `tgl_dibuat` datetime NOT NULL,
   `tgl_perubahan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Tabel untuk anggota';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Tabel untuk anggota';
 
 --
 -- RELATIONSHIPS FOR TABLE `anggota`:
@@ -60,13 +62,13 @@ CREATE TABLE `anggota` (
 -- Dumping data for table `anggota`
 --
 
-INSERT INTO `anggota` (`id`, `nama_depan`, `nama_belakang`, `surel`, `nohp`, `alamat`, `katasandi`, `j-kartu_identitas`, `no_identitas`, `tempat_lahir`, `tgl_lahir`, `jenis_kelamin`, `status_pekerjaan`, `level_akses`, `kode_akses`, `status`, `tgl_dibuat`, `tgl_perubahan`) VALUES
-(1, 'Mike', 'Dalisay', 'mike@example.com', '081246361064', 'Di bumi', '*71311A56200B2866958433E255027865AF83FD2E', 'KTP', 6471012506980002, 'Balikpapan', '1998-06-25', 'Laki-Laki', 'Mahasiswa', 'Admin', '', 1, '2018-12-13 09:48:00', '2018-12-15 12:15:14'),
-(2, 'Kenneth', 'Robinson', 'simonickalexs@gmail.com', '087815321421', 'Dirumah', '*71311A56200B2866958433E255027865AF83FD2E', '', 0, '', '0000-00-00', '', '', 'Pustakawan', '', 1, '2018-12-13 09:48:00', '2018-12-13 13:28:55'),
-(3, 'Darwin', 'Dalisay', 'darwin@example.com', '089517371697', 'Dimana aku senang', '*71311A56200B2866958433E255027865AF83FD2E', '', 0, '', '0000-00-00', '', '', 'Anggota', '', 1, '2018-12-13 09:48:00', '2018-12-13 13:28:55'),
-(4, 'Marisol', 'Jane', 'marisol@example.com', '081347955101', 'Pulau Kapuk', '*71311A56200B2866958433E255027865AF83FD2E', '', 0, '', '0000-00-00', '', '', 'Anggota', '', 1, '2018-12-13 09:48:00', '2018-12-13 13:28:55'),
-(5, 'Martin', 'Ignacio', 'martin@example.com', '089617288809', 'Pulau Mocacchino', '*71311A56200B2866958433E255027865AF83FD2E', '', 0, '', '0000-00-00', '', '', 'Anggota', '', 1, '2018-12-13 09:48:00', '2018-12-13 13:28:55'),
-(6, 'Tim', 'Duncan', 'duncan.tim@example.com', '081524431098', 'Pulau Komodo', '*71311A56200B2866958433E255027865AF83FD2E', '', 0, '', '0000-00-00', '', '', 'Anggota', '', 1, '2018-12-13 09:48:00', '2018-12-13 13:28:55');
+INSERT INTO `anggota` (`id`, `IDAnggota`, `nama_depan`, `nama_belakang`, `surel`, `avatar`, `nohp`, `alamat`, `katasandi`, `j-kartu_identitas`, `no_identitas`, `tempat_lahir`, `tgl_lahir`, `jenis_kelamin`, `status_pekerjaan`, `level_akses`, `kode_akses`, `status`, `tgl_dibuat`, `tgl_perubahan`) VALUES
+(0001, 11, 'Mike', 'Dalisay', 'mike@example.com', NULL, '081246361064', 'Di bumi', '*71311A56200B2866958433E255027865AF83FD2E', 'KTP', 6471012506980002, 'Balikpapan', '1998-06-25', 'Laki-Laki', 'Mahasiswa', 'Admin', '', 1, '2018-12-13 09:48:00', '2018-12-20 15:04:20'),
+(0002, 12, 'Kenneth', 'Robinson', 'simonickalexs@gmail.com', NULL, '087815321421', 'Dirumah', '*71311A56200B2866958433E255027865AF83FD2E', 'KTP', 647101150219970003, 'Balikapan', '1997-02-15', 'Laki-Laki', 'Mahasiswa', 'Pustakawan', '', 1, '2018-12-13 09:48:00', '2018-12-20 15:04:20'),
+(0003, 13, 'Darwin', 'Dalisay', 'darwin@example.com', NULL, '089517371697', 'Dimana aku senang', '*71311A56200B2866958433E255027865AF83FD2E', 'Kartu Pelajar', 28173782981, 'Balikpapan', '2003-01-20', 'Laki-Laki', 'Mahasiswa', 'Anggota', '', 1, '2018-12-13 09:48:00', '2018-12-20 15:07:03'),
+(0004, 14, 'Marisol', 'Jane', 'marisol@example.com', NULL, '081347955101', 'Pulau Kapuk', '*71311A56200B2866958433E255027865AF83FD2E', 'Kartu Pelajar', 771236219, 'Balikpapan', '1998-03-11', 'Perempuan', 'Mahasiswa', 'Anggota', '', 1, '2018-12-13 09:48:00', '2018-12-20 15:07:03'),
+(0005, 15, 'Scott', 'Hanselman', 'scott@microsoft.com', 'https://i.imgur.com/ltva2En.jpg', '089617288809', 'Pulau Mocacchino', '*71311A56200B2866958433E255027865AF83FD2E', 'Kartu Pelajar', 839402893, 'Balikpapan', '1998-05-19', 'Laki-Laki', 'Mahasiswa', 'Anggota', '', 1, '2018-12-13 09:48:00', '2018-12-25 09:21:39'),
+(0006, 16, 'Tim', 'Duncan', 'duncan.tim@example.com', NULL, '081524431098', 'Pulau Komodo', '*71311A56200B2866958433E255027865AF83FD2E', 'Kartu Pelajar', 2392849021, 'Balikpapan', '1999-12-12', 'Laki-Laki', 'Mahasiswa', 'Anggota', '', 1, '2018-12-13 09:48:00', '2018-12-20 15:07:03');
 
 -- --------------------------------------------------------
 
@@ -76,14 +78,13 @@ INSERT INTO `anggota` (`id`, `nama_depan`, `nama_belakang`, `surel`, `nohp`, `al
 
 DROP TABLE IF EXISTS `buku`;
 CREATE TABLE `buku` (
-  `id_buku` int(11) NOT NULL,
+  `nomor_panggil` varchar(8) NOT NULL,
   `judul_buku` varchar(200) NOT NULL,
-  `deskripsi_singkat` text NOT NULL,
+  `deskripsi_singkat` text CHARACTER SET utf8 NOT NULL,
   `pengarang` varchar(200) NOT NULL,
   `tahun_terbit` date NOT NULL,
   `status_buku` int(1) NOT NULL COMMENT '0 = dipinjam, 1 = tersedia, 2 = hilang',
-  `nomor_panggil` varchar(8) NOT NULL,
-  `isbn` int(30) NOT NULL,
+  `isbn` int(150) NOT NULL,
   `penerbit` varchar(70) NOT NULL,
   `tgl_ditambahkan` datetime NOT NULL,
   `tgl_perubahan` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
@@ -94,7 +95,7 @@ CREATE TABLE `buku` (
   `jenis_bahan` varchar(20) DEFAULT NULL,
   `konten_digital` text,
   `idrelasibuku` int(75) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin7 COMMENT='Tabel data buku';
+) ENGINE=InnoDB DEFAULT CHARSET=latin7 COMMENT='Tabel data buku';
 
 --
 -- RELATIONSHIPS FOR TABLE `buku`:
@@ -104,10 +105,14 @@ CREATE TABLE `buku` (
 -- Dumping data for table `buku`
 --
 
-INSERT INTO `buku` (`id_buku`, `judul_buku`, `deskripsi_singkat`, `pengarang`, `tahun_terbit`, `status_buku`, `nomor_panggil`, `isbn`, `penerbit`, `tgl_ditambahkan`, `tgl_perubahan`, `gambar`, `numofcopies`, `lbr_halaman`, `kategori`, `jenis_bahan`, `konten_digital`, `idrelasibuku`) VALUES
-(1, 'Earthfall', 'The Ulltrians, ancient warriors long thought extinct, now threaten the galaxy. Earth is next on their list of targets.', 'Craig DeLancey', '2014-08-09', 1, 'CA-109', 291089384, 'Omega Threshold', '2018-12-12 00:00:00', '2018-12-16 01:51:54', 'https://kbimages1-a.akamaihd.net/b18201fe-b43e-4be1-992a-825689002413/353/569/90/False/earthfall-8.jpg', 3, 136, 'Sains Fiksi', 'Monograf', NULL, 125),
-(2, 'Evolution Commandos', 'Amir Tarkos is one of the only humans in the Predator Corp, the most feared and respected military force in the Galaxy. The Predators seek to prevent and punish lifecrimes: violations against ecosystems. With his partner Bria, a bear-like carnivore, Tarkos is given a dangerous and difficult mission.', 'Craig DeLancey', '2015-05-16', 1, 'CA-108', 281031200, 'Omega Threshold', '2015-06-03 09:18:00', '2018-12-16 01:53:55', 'https://kbimages1-a.akamaihd.net/b73855d5-e36a-499d-84af-fb964d5a7532/353/569/90/False/evolution-commandos.jpg', 1, 142, 'Sains Fiksi', 'Monograf', NULL, 125),
-(3, 'Well Of Furies', 'The most feared world in the galaxy: The Well of Furies. From this planet, the godlike Ulltrians waged war on all life among the stars.', 'Craig DeLancey', '2016-10-11', 1, 'CA-107', 281031200, 'Omega Threshold', '2015-06-03 09:18:00', '2018-12-16 01:54:49', 'https://kbimages1-a.akamaihd.net/f8998177-6e94-4558-bc9a-933f6d7d0d75/353/569/90/False/well-of-furies.jpg', 4, 137, 'Sains Fiksi', 'Monograf', NULL, 125);
+INSERT INTO `buku` (`nomor_panggil`, `judul_buku`, `deskripsi_singkat`, `pengarang`, `tahun_terbit`, `status_buku`, `isbn`, `penerbit`, `tgl_ditambahkan`, `tgl_perubahan`, `gambar`, `numofcopies`, `lbr_halaman`, `kategori`, `jenis_bahan`, `konten_digital`, `idrelasibuku`) VALUES
+('CA-107', 'Well Of Furies', 'The most feared world in the galaxy: The Well of Furies. From this planet, the godlike Ulltrians waged war on all life among the stars.', 'Craig DeLancey', '2016-10-11', 1, 281031200, 'Omega Threshold', '2015-06-03 09:18:00', '2018-12-16 01:54:49', 'https://kbimages1-a.akamaihd.net/f8998177-6e94-4558-bc9a-933f6d7d0d75/353/569/90/False/well-of-furies.jpg', 4, 137, 'Sains Fiksi', 'Monograf', NULL, 125),
+('CA-108', 'Evolution Commandos', 'Amir Tarkos is one of the only humans in the Predator Corp, the most feared and respected military force in the Galaxy. The Predators seek to prevent and punish lifecrimes: violations against ecosystems. With his partner Bria, a bear-like carnivore, Tarkos is given a dangerous and difficult mission.', 'Craig DeLancey', '2015-05-16', 1, 281031200, 'Omega Threshold', '2015-06-03 09:18:00', '2018-12-16 01:53:55', 'https://kbimages1-a.akamaihd.net/b73855d5-e36a-499d-84af-fb964d5a7532/353/569/90/False/evolution-commandos.jpg', 1, 142, 'Sains Fiksi', 'Monograf', NULL, 125),
+('CA-109', 'Earthfall', 'The Ulltrians, ancient warriors long thought extinct, now threaten the galaxy. Earth is next on their list of targets.', 'Craig DeLancey', '2014-08-09', 1, 291089384, 'Omega Threshold', '2018-12-12 00:00:00', '2018-12-16 01:51:54', 'https://kbimages1-a.akamaihd.net/b18201fe-b43e-4be1-992a-825689002413/353/569/90/False/earthfall-8.jpg', 3, 136, 'Sains Fiksi', 'Monograf', NULL, 125),
+('CA-112', 'Go Kitchen (Ayo Ke Dapur)', 'Lets GO KITCHEN buibuuuuuuu, semangat selalu!!! Siapa saja bisa pergi ke dapur. Oak ada kata gak bisa untuk urusan pergi ke dapur, yang ada hanya mau atau tidak untuk belajar Kiss Kiss dari kecamatan Cikampek, jayalah selalu untuk buibu seluruh Indonesia!', 'Restu Utami Dewi', '2018-09-27', 1, 978979757, 'Kawan Pustaka', '2018-12-25 00:00:00', '2018-12-26 00:20:37', 'https://cdn.gramedia.com/uploads/items/9789797576622_go_kitchen__w200_hauto.jpg', 1, 184, 'Buku Memasak', 'Monograf', NULL, 108),
+('CA-113', 'Digital ParenThink', 'Membesarkan Kids Zaman Now memiliki tantangannya sendiri karena sejak lahir, internet telah menjadi bagian dari keseharian mereka. Bagaikan dua sisi mata uang, internet sangat memudahkan hidup kita sekaligus diam-diam menyimpan bahaya.', 'Mona Ratuliu', '2018-08-14', 1, 978602385, 'Noura Books Publishing', '2018-12-25 00:00:00', '2018-12-26 00:20:45', 'https://cdn.gramedia.com/uploads/items/9786023855131_Digital-ParenThink__w200_hauto.jpg', 1, 216, 'Pengasuhan Anak', 'Monograf', NULL, 113),
+('CA-114', 'Detektif Conan 94', 'Sikap Ran akhir-akhir ini agak aneh! Conan dan Kogoro yang curiga akhirnya memutuskan untuk membuntuti gadis itu? dan apa yang mereka temukan!? Karya wisata merah darah, di mana terjadi benturan berbagai kepentingan pun dimulai!', 'Aoyama Gosho', '2018-09-05', 1, 97860204, 'Elex Media Komputindo', '2018-12-25 00:00:00', '2018-12-26 00:19:37', 'https://cdn.gramedia.com/uploads/items/9786020478012_Detektif-Cona__w200_hauto.jpg', 1, 192, 'Komik', 'Monograf', NULL, 114),
+('CA-115', 'Delusi', 'Dewangga Bayuzena, si cowok ganteng tapi nakal, suka berantem, sok jagoan, dan termasuk dalam geng Rudy sekawan yang beranggotakan Gabrian, Rudy, dan Daffa. Akibat tingkah lakunya yang berandalan itu, Zena dipindahkan dari sekolah elit dan harus terjebak di SMA Adi Bakti yang dijulukinya \'sekolah pembuangan\'.', 'Sirhayani', '2018-11-29', 0, 97860253, 'HIKARU PUBLISHING', '2018-12-25 00:00:00', '2018-12-26 00:19:31', 'https://cdn.gramedia.com/uploads/items/9786025318443_delusi__w200_hauto.jpg', 1, 376, 'Komik', 'Monograf', NULL, 115);
 
 -- --------------------------------------------------------
 
@@ -117,20 +122,30 @@ INSERT INTO `buku` (`id_buku`, `judul_buku`, `deskripsi_singkat`, `pengarang`, `
 
 DROP TABLE IF EXISTS `peminjaman`;
 CREATE TABLE `peminjaman` (
-  `id_peminjaman` int(11) NOT NULL,
-  `id_anggota` int(11) NOT NULL,
-  `id_buku` int(11) NOT NULL,
+  `id_peminjaman` int(7) UNSIGNED ZEROFILL NOT NULL,
+  `id_anggota` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `nomor_panggil_buku` varchar(8) NOT NULL,
+  `is_accepted` int(2) NOT NULL,
   `tgl_peminjaman` date NOT NULL,
-  `tgl_pengembalian` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin7;
+  `tgl_pengembalian` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tanggal_kembali` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin7;
 
 --
 -- RELATIONSHIPS FOR TABLE `peminjaman`:
 --   `id_anggota`
 --       `anggota` -> `id`
---   `id_buku`
---       `buku` -> `id_buku`
+--   `nomor_panggil_buku`
+--       `buku` -> `nomor_panggil`
 --
+
+--
+-- Dumping data for table `peminjaman`
+--
+
+INSERT INTO `peminjaman` (`id_peminjaman`, `id_anggota`, `nomor_panggil_buku`, `is_accepted`, `tgl_peminjaman`, `tgl_pengembalian`, `tanggal_kembali`) VALUES
+(0000001, 0005, 'CA-115', 1, '2018-12-25', '2018-12-25 11:37:31', NULL),
+(1738140, 0005, 'CA-113', 0, '2018-12-26', '2019-01-01 16:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -146,16 +161,12 @@ CREATE TABLE `pengembalian` (
   `id_peminjaman` int(11) NOT NULL,
   `tgl_kembali` int(11) NOT NULL,
   `keterangan` text
-) ENGINE=MyISAM DEFAULT CHARSET=latin7;
+) ENGINE=InnoDB DEFAULT CHARSET=latin7;
 
 --
 -- RELATIONSHIPS FOR TABLE `pengembalian`:
 --   `id_anggota`
 --       `anggota` -> `id`
---   `id_buku`
---       `buku` -> `id_buku`
---   `id_peminjaman`
---       `peminjaman` -> `id_peminjaman`
 --
 
 --
@@ -172,14 +183,15 @@ ALTER TABLE `anggota`
 -- Indexes for table `buku`
 --
 ALTER TABLE `buku`
-  ADD PRIMARY KEY (`id_buku`),
-  ADD UNIQUE KEY `nomor_panggil` (`nomor_panggil`);
+  ADD PRIMARY KEY (`nomor_panggil`);
 
 --
 -- Indexes for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  ADD PRIMARY KEY (`id_peminjaman`);
+  ADD PRIMARY KEY (`id_peminjaman`),
+  ADD KEY `fk_anggota` (`id_anggota`),
+  ADD KEY `fk_buku` (`nomor_panggil_buku`);
 
 --
 -- Indexes for table `pengembalian`
@@ -195,25 +207,30 @@ ALTER TABLE `pengembalian`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `buku`
---
-ALTER TABLE `buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_peminjaman` int(7) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9955334;
 
 --
 -- AUTO_INCREMENT for table `pengembalian`
 --
 ALTER TABLE `pengembalian`
   MODIFY `id_pengembalian` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  ADD CONSTRAINT `fk_anggota` FOREIGN KEY (`id_anggota`) REFERENCES `anggota` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_buku` FOREIGN KEY (`nomor_panggil_buku`) REFERENCES `buku` (`nomor_panggil`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
