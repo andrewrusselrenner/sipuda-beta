@@ -115,8 +115,6 @@ include('navbar.php');
                       */
 
                       //include("pinjam.php");
-                      ?> 
-                    <?php
                       include_once("pinjamModal.php");
                       echo "</div>";
                     } else
