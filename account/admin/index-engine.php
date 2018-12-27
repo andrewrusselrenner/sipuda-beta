@@ -40,7 +40,7 @@ if($ava === NULL)
 }
 
 // untuk tab manajemen pustaka -> buku
-$sql2 = $dbs->prepare('SELECT * FROM buku ORDER BY tgl_ditambahkan LIMIT 5');
+$sql2 = $dbs->prepare('SELECT * FROM buku ORDER BY tgl_ditambahkan DESC LIMIT 5');
 $sql2->execute();
 $results2=$sql2->fetchAll(PDO::FETCH_OBJ);
 $hitung=1;
