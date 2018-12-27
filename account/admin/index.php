@@ -41,6 +41,7 @@ include(ROOT_PATH.'/pages/navbar.php');
         </div>
     </div>
 </div>
+<p><?php if(isset( $_SESSION['message'])) echo  $_SESSION['message']; ?></p>
 <div class="py-5">
     <div class="container-fluid">
       <div class="row">
@@ -95,7 +96,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                         <div class="container-fluid">
                           <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-between my-2">
-                              <a href="buku/detailpustaka" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-book-reader"></i>Detil Pustaka
+                              <a href="buku/detailpustaka" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-book-reader"></i> Detil Pustaka
                               </a>
                               <?php
                               //echo "<button data-toggle='modal' data-target='#tambahbuku' data-id='".$nompang."' id='tambahbuku' class='btn btn-outline-primary btn-lg'><i class='fas fa-plus'></i> Tambah Buku</button>";
@@ -103,7 +104,7 @@ include(ROOT_PATH.'/pages/navbar.php');
 
                               //include_once("buku/tambahbuku.php");
                               ?>
-                              <a href="buku/detailanggota" data-toggle="modal" data-target="#tambahbuku" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-plus"></i>Tambah Buku
+                              <a href="" data-toggle="modal" data-target="#tambahbuku" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-plus"></i> Tambah Buku
                               </a>
                               <?php
                               include_once("buku/tambahbuku.php");
@@ -112,7 +113,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                           </div>
                         </div>
                       </div>
-                      <div class="table-responsive">
+                      <div class="table-responsive" id="daftarbuku">
                         <table class="table">
                           <thead class="text-md-center">
                             <tr>
@@ -329,6 +330,47 @@ include(ROOT_PATH.'/pages/navbar.php');
       </div>
     </div>
   </div>
+  <script>
+$(document).ready(function(){
+ $("#tambahbukuform").on("submit", function(event){  
+  event.preventDefault(); 
+  var postData = $(this).serializeArray();
+  //var formURL = $(this).
+  /* 
+  if($('#judul').val() == "")  
+  {  
+   alert("Judul harus ada!");  
+  }  
+  else if($('#nopang').val() == '')  
+  {  
+   alert("Nomor Panggil harus ada!");  
+  }  
+  else if($('#author').val() == '')
+  {  
+   alert("Pengarang harus ada");  
+  }
+  
+   
+  else  
+  {  
+    */
+   $.ajax({  
+    url:"buku/addbook.php",  
+    method:"POST",  
+    data:$('#tambahbukuform').serialize(),  
+    beforeSend:function(){  
+     $('#tambah').val("Menambahkan");  
+    },  
+    success:function(data){  
+     $('#tambahbukuform')[0].reset();  
+     $('#tambahbuku').modal('hide');  
+     //$('#daftarbuku').html(data);  
+    }  
+   });  
+  //}  
+ });
+});
+</script>
 <?php
 include(ROOT_PATH.'/pages/footer.php');
 ?>
