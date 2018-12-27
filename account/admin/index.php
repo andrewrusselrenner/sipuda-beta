@@ -334,7 +334,7 @@ include(ROOT_PATH.'/pages/navbar.php');
 $(document).ready(function(){
  $("#tambahbukuform").on("submit", function(event){  
   event.preventDefault(); 
-  var postData = $(this).serializeArray();
+  //var postData = $(this).serializeArray();
   //var formURL = $(this).
   /* 
   if($('#judul').val() == "")  
