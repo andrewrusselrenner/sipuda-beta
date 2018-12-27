@@ -7,32 +7,32 @@
         </div>
         <div class="modal-body">
         <form method="POST" id="tambahbukuform">
-          <script>
+          <!--<script>
             function submitForm() {
             document.getElementById("tambahbukuform").submit();
             }
-          </script>
+          </script>-->
           <div class="row">
             <div class="col-md-12">
-              <div class="form-group"> <label for="form3">Judul Buku</label> <input type="text" class="form-control" id="judul" placeholder="Cth : Buku Panduan Memasak" required="required" name="title">
+              <div class="form-group"> <label for="judul">Judul Buku</label> <input type="text" class="form-control" id="judul" placeholder="Cth : Buku Panduan Memasak" required="required" name="judul">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="form-group"> <label for="form3">Deskripsi</label> <input type="text" class="form-control" id="desksing" placeholder="Deskripsi Singkat Buku" required="required" name="desksing">
+              <div class="form-group"> <label for="deskripsiskt">Deskripsi</label> <input type="text" class="form-control" id="deskripsiskt" placeholder="Deskripsi Singkat Buku" required="required" name="deskripsiskt">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="form-group"> <label for="form3">Pengarang/Author</label> <input type="text" class="form-control" id="author" placeholder="Cth : Budiman" required="required" name="author">
+              <div class="form-group"> <label for="author">Pengarang/Author</label> <input type="text" class="form-control" id="author" placeholder="Cth : Budiman" required="required" name="author">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <div class="form-group"> <label for="form3">Tahun Terbit</label> <input type="date" class="form-control" id="tahun" required="required" name="tahun">
+              <div class="form-group"> <label for="tahunterbit">Tahun Terbit</label> <input type="date" class="form-control" id="tahunterbit" required="required" name="tahunterbit">
               </div>
             </div>
             <div class="col-md-6">
@@ -47,34 +47,40 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <div class="form-group"> <label for="form3">Jumlah Halaman</label> <input type="number" class="form-control" id="jumhal" required="required" name="jumhal" placeholder="Cth : 136">
+              <div class="form-group"> <label for="hal">Jumlah Halaman</label> <input type="number" class="form-control" id="hal" required="required" name="hal" placeholder="Cth : 136">
               </div>
             </div>
             <div class="col-md-6">
-              <div class="form-group"> <label for="form3">Kategori</label> <input type="email" class="form-control" id="kategori" required="required" name="kategori" placeholder="Cth : Sains dan Fiksi">
+              <div class="form-group"> <label for="category">Kategori</label> <input type="text" class="form-control" id="category" required="required" name="category" placeholder="Cth : Sains dan Fiksi">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <div class="form-group"> <label for="form3">Nomor Panggil</label> <input type="text" class="form-control" id="nopang" required="required" name="nopang" placeholder="Cth : AD-2810">
+              <div class="form-group"> <label for="nopang">Nomor Panggil</label> <input type="text" class="form-control" id="nopang" required="required" name="nopang" placeholder="Cth : AD-2810">
               </div>
             </div>
             <div class="col-md-6">
-              <div class="form-group"> <label for="form3">ISBN</label> <input type="text" class="form-control" id="isbn" required="required" name="isbn" placeholder="12 digit nomor ISBN">
+              <div class="form-group"> <label for="isbn">ISBN</label> <input type="text" class="form-control" id="isbn" required="required" name="isbn" placeholder="12 digit nomor ISBN">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="form-group"> <label for="form3">Penerbit</label> <input type="text" class="form-control" placeholder="Cth : Percetakan Surya Nuansa" required="required" id="penerbit" name="penerbit">
+              <div class="form-group"> <label for="penerbit">Penerbit</label> <input type="text" class="form-control" placeholder="Cth : Percetakan Surya Nuansa" required="required" id="penerbit" name="penerbit">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group"> <label for="gambar">Tautan Gambar</label> <input type="url" class="form-control" placeholder="Cth : http://imgurl.com/IghsxS.jpg" required="required" id="gambar" name="gambar">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <div class="form-group"> <label for="form3">Jenis Bahan</label>
-                <select class="form-control bg-primary d-flex w-100 text-white" id="jbahan" name="jbahan">
+              <div class="form-group"> <label for="jenisbahan">Jenis Bahan</label>
+                <select class="form-control bg-primary d-flex w-100 text-white" id="jenisbahan" name="jenisbahan">
                   <option class="text-white" value="Monograf">Monograf</option>
                   <option value="Digital" class="text-white">Digital</option>
                   <option value="Komik" class="text-white">Komik</option>
@@ -82,13 +88,20 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="form-group"> <label for="form3">Jumlah Buku Salinan</label> <input type="text" class="form-control" id="bukusalinan" required="required" name="bukusalinan" placeholder="Masukkan jumlah buku yang sama">
+              <div class="form-group"> <label for="salinan">Jumlah Buku Salinan</label> <input type="text" class="form-control" id="salinan" required="required" name="salinan" placeholder="Masukkan jumlah buku yang sama">
               </div>
             </div>
           </div>
-        </form>
         </div>
-        <div class="modal-footer"> <button type="button" class="btn btn-primary">Simpan</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button> </div>
+        <div class="modal-footer"> 
+          <input type="submit" name="tambah" id="tambah" class="btn btn-primary" value="Simpan" />
+          <!--<button type="button" name="tambah" id="tambah" class="btn btn-primary" value="Simpan">Simpan</button> -->
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button> 
+        </div>
+        </form>
       </div>
     </div>
   </div>
+  <?php
+  //include_once("addbooks.php");
+  ?>
