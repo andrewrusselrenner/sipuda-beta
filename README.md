@@ -7,9 +7,9 @@ I just learn programming and not intended to be use for a real case. I know it's
 > ATTENTION:
 IT'S STILL UNDER DEVELOPMENT AND CANNOT TO BE USE FOR A MOMENT. IT EVEN CANNOT CREATING DB YET!.
 
-###### Step To Connect The Database
+### Step To Connect The Database
 Since I'm not creating the tool for the set up yet, you have to manually input the information on hard-code.
-1. Go to config/db_data.php
+1. Go to config/dbdata.php
 2. Edit database credential there
 3. Now, you can import sql file to phpMyAdmin. But create table first before importing.
 
@@ -17,14 +17,18 @@ Since I'm not creating the tool for the set up yet, you have to manually input t
 - register.php
 - registerscript.php
 - register-engine.php
-- db_conn.php and db_data.php planning to deprecate
-- pinjam.php
-- viewbook.php
 - breadcrumb.php
 - cek-ketersediaan.php (NOT YET CREATED)
-- account/index.php
 - account/forgotpw.php (NOT YET CREATED)
-- and all on ADMIN ACCOUNT folder
+- and half on ADMIN ACCOUNT folder
+
+###### For Admin
+Email : mike@example.com
+Password : admin12345
+
+###### For Member
+Email : scott@microsoft.com
+Password : admin12345
 
 ###### Credits
 Credits will be available here since it's the very first time I do this. I do beg your apologize.
@@ -32,4 +36,4 @@ Credits will be available here since it's the very first time I do this. I do be
 Thank you.
 
 ### Update
-New SQL template has been uploaded. You can import that to phpMyAdmin to running the script.
+New SQL template has been uploaded. You can import that to phpMyAdmin to running the script. The template is on config/sql_template.
