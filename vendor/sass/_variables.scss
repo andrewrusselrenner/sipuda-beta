@@ -5,7 +5,7 @@
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-rounded:            false !important;
+$enable-rounded:            false !default;
 $enable-shadows:            true;
 $enable-transitions:        true;
 $enable-hover-media-query:  false;
