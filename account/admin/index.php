@@ -273,6 +273,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                                 <td><?php echo $judul;?></td>
                                 <td><?php echo $author;?></td>
                                 <td><?php echo $tahunterbit;?></td>
+                                <td><?php echo $status_buku;?></td>
                                 <td><?php echo $isbn;?></td>
                                 <td><?php echo $tglpeminjaman;?></td>
                                 <td><?php echo $tglpengembalian;?></td>
@@ -285,7 +286,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                                 ?>
                                 </td>
                                 <?php
-                                $hitung=$hitung+1;
+                                $hitung2=$hitung2+1;
                             }
                           }
                                 ?>
