@@ -3,7 +3,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
 require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 
 // Fetching semua buku
-    $query = "SELECT * FROM buku WHERE tgl_ditambahkan ORDER BY buku.tgl_ditambahkan DESC LIMIT 4";
+    $query = "SELECT * FROM buku WHERE tgl_ditambahkan ORDER BY buku.tgl_ditambahkan DESC LIMIT 8";
     $raw_result = mysqli_query($con, $query);
 
     ?>
