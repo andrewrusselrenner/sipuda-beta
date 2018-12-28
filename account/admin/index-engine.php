@@ -49,4 +49,5 @@ $hitung=1;
 $sql3 = $dbs->prepare('SELECT buku.nomor_panggil,buku.judul_buku,buku.pengarang,buku.tahun_terbit,buku.status_buku,buku.numofcopies,buku.isbn,peminjaman.tgl_peminjaman,peminjaman.tgl_pengembalian,peminjaman.id_peminjaman,peminjaman.tanggal_kembali FROM peminjaman JOIN anggota ON anggota.id=peminjaman.id_anggota JOIN buku ON buku.nomor_panggil=peminjaman.nomor_panggil_buku ORDER BY peminjaman.tgl_peminjaman DESC LIMIT 5');
 $sql3->execute();
 $results3=$sql3->fetchAll(PDO::FETCH_OBJ);
+$hitung2=1;
 ?>
