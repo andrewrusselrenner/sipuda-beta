@@ -7,7 +7,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
     $raw_result = mysqli_query($con, $query);
 
     ?>
-    <div class="py-5 my-5">
+    <div class="py-4 my-5">
         <div class="container-fluid my-5">
         <h1 class="text-center mb-3">Buku baru telah tiba!</h1>
             <div class="row w-5 mx-auto col-md-auto content-center">
@@ -15,7 +15,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
                 while($result = $raw_result->fetch_assoc())
                 {
                     ?>
-                    <div class="col-md-3">
+                    <div class="col-md-3 py-2">
                         <div class="card" style="height: 771px;">
                             <img class="card-img-center img-fluid" src= <?php echo $result['gambar'] ?> alt="Buku Perpus" style="height: 453px; width: 328px;">
                             <div class="card-body">
