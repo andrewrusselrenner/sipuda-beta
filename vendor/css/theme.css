@@ -10897,6 +10897,11 @@ body > * {
   background-position: center;
 }
 
+.section-parallax .background-image {
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+}
+
 .cover {
   min-height: 100%;
 }
