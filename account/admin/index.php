@@ -129,7 +129,6 @@ include(ROOT_PATH.'/pages/navbar.php');
                               <th>Jumlah Salinan</th>
                               <th>Jumlah Lembar</th>
                               <th>Kategori</th>
-                              <th>Penerbit</th>
                               <th>Jenis Bahan</th>
                               <th>Aksi</th>
                             </tr>
@@ -153,7 +152,6 @@ include(ROOT_PATH.'/pages/navbar.php');
                               $copies = htmlentities($result2->numofcopies);
                               $lbrhal = htmlentities($result2->lbr_halaman);
                               $kategori = htmlentities($result2->kategori);
-                              $penerbit = htmlentities($result2->penerbit);
                               $jbahan = htmlentities($result2->jenis_bahan);
 
                               //mengconvert dari angka ke string
@@ -188,7 +186,6 @@ include(ROOT_PATH.'/pages/navbar.php');
                                 <td><?php echo $copies." buku";?></td>
                                 <td><?php echo $lbrhal." hal.";?></td>
                                 <td><?php echo $kategori;?></td>
-                                <td><?php echo $penerbit;?></td>
                                 <td><?php echo $jbahan;?></td>
                               
                                 <td>
