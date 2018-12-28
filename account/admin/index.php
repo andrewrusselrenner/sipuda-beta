@@ -359,31 +359,6 @@ $(document).ready(function () {
     });
 });
 </script>
-  <!--<script>
-$(document).ready(function(){
- $("#tambahbukuform").on("submit", function(event){  
-  event.preventDefault(); 
-  /*  
-  else  
-  {  
-    */
-   $.ajax({  
-    url:"buku/addbook.php",  
-    method:"POST",  
-    data:$('#tambahbukuform').serializeArray(),  
-    beforeSend:function(){  
-     $('#tambah').val("Menambahkan");  
-    },  
-    success:function(data){  
-     $('#tambahbukuform')[0].reset();  
-     $('#tambahbuku').modal('hide');  
-     //$('#daftarbuku').html(data);  
-    }  
-   });  
-  //}  
- });
-});
-</script>-->
 
 <?php
 include(ROOT_PATH.'/pages/footer.php');
