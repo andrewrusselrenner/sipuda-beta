@@ -1,4 +1,6 @@
-
+<?php
+  //include_once("buku/addbook.php");
+  ?>
   <div class="modal fade" id="tambahbuku" tabindex="-1" role="dialog" aria-labelledby="tambahbukuLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -6,7 +8,7 @@
           <h5 class="modal-title">Tambah Buku</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
         </div>
         <div class="modal-body">
-        <form method="POST" id="tambahbukuform">
+        <form method="POST" action="buku/addbook.php" id="tambahbukuform">
           <!--<script>
             function submitForm() {
             document.getElementById("tambahbukuform").submit();
@@ -92,16 +94,37 @@
               </div>
             </div>
           </div>
+          </form>
         </div>
         <div class="modal-footer"> 
           <input type="submit" name="tambah" id="tambah" class="btn btn-primary" value="Simpan" />
           <!--<button type="button" name="tambah" id="tambah" class="btn btn-primary" value="Simpan">Simpan</button> -->
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button> 
-        </div>
-        </form>
+        </div>        
       </div>
     </div>
   </div>
-  <?php
-  //include_once("addbooks.php");
-  ?>
+  <!-- Modal jika sukses -->
+<div class="modal fade" id="suksesmodal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      
+      <div class="modal-header">
+        <h4 class="modal-title">Sukses</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      
+      <div class="modal-body">
+        
+      </div>
+
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+      </div>
+
+    </div>
+  </div>
+</div>

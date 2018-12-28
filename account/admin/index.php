@@ -41,7 +41,6 @@ include(ROOT_PATH.'/pages/navbar.php');
         </div>
     </div>
 </div>
-<p><?php if(isset( $_SESSION['message'])) echo  $_SESSION['message']; ?></p>
 <div class="py-5">
     <div class="container-fluid">
       <div class="row">
@@ -331,33 +330,47 @@ include(ROOT_PATH.'/pages/navbar.php');
     </div>
   </div>
   <script>
+/* must apply only after HTML has loaded */
+$(document).ready(function () {
+    $("#tambahbukuform").on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) {
+                $('#tambahbukuform')[0].reset();
+                $('#tambahbuku').modal('hide'); 
+                $('#suksesmodal').modal('show');
+                //$('#suksesmodal .modal-header .modal-title').html("Sukses");
+                $('#suksesmodal .modal-body').html(data);
+                //$("#tambah").remove();
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+     
+    $("#tambah").on('click', function() {
+        $("#tambahbukuform").submit();
+    });
+});
+</script>
+  <!--<script>
 $(document).ready(function(){
  $("#tambahbukuform").on("submit", function(event){  
   event.preventDefault(); 
-  //var postData = $(this).serializeArray();
-  //var formURL = $(this).
-  /* 
-  if($('#judul').val() == "")  
-  {  
-   alert("Judul harus ada!");  
-  }  
-  else if($('#nopang').val() == '')  
-  {  
-   alert("Nomor Panggil harus ada!");  
-  }  
-  else if($('#author').val() == '')
-  {  
-   alert("Pengarang harus ada");  
-  }
-  
-   
+  /*  
   else  
   {  
     */
    $.ajax({  
     url:"buku/addbook.php",  
     method:"POST",  
-    data:$('#tambahbukuform').serialize(),  
+    data:$('#tambahbukuform').serializeArray(),  
     beforeSend:function(){  
      $('#tambah').val("Menambahkan");  
     },  
@@ -370,7 +383,8 @@ $(document).ready(function(){
   //}  
  });
 });
-</script>
+</script>-->
+
 <?php
 include(ROOT_PATH.'/pages/footer.php');
 ?>
