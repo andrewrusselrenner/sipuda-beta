@@ -95,7 +95,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                         <div class="container-fluid">
                           <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-between my-2">
-                              <a href="buku/detailpustaka" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-book-reader"></i> Detil Pustaka
+                              <a href="../pages/catalog" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-book-reader"></i> Detil Pustaka
                               </a>
                               <?php
                               //echo "<button data-toggle='modal' data-target='#tambahbuku' data-id='".$nompang."' id='tambahbuku' class='btn btn-outline-primary btn-lg'><i class='fas fa-plus'></i> Tambah Buku</button>";
