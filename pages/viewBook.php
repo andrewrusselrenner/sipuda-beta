@@ -117,6 +117,7 @@ include('navbar.php');
                       //include("pinjam.php");
                       include_once("pinjamModal.php");
                       echo "</div>";
+                      echo "</div>";
                     } else
                     {
                       // Nothing happened lel
@@ -161,48 +162,8 @@ include('navbar.php');
         
       </div>
     </div>
-      <div class="row my-5">
-        <div class="col-md-12">
-          <h3 class="text-center">Buku Salinan&nbsp;<span class="badge badge-light"> Baru</span></h3>
-          <hr class="bg-primary">
-          <div class="table-responsive">
-            <table class="table table-striped table-borderless">
-              <thead>
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Nama Buku</th>
-                  <th scope="col">Tahun Terbit</th>
-                  <th scope="col">ISBN</th>
-                  <th scope="col">Nomor Panggil</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Earthfall</td>
-                  <td>2014</td>
-                  <td>192018662</td>
-                  <td>CA-110</td>
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                  <td>Earthfall</td>
-                  <td>2014</td>
-                  <td>121309080</td>
-                  <td>CA-111</td>
-                </tr>
-                <tr>
-                  <<th scope="row">3</th>
-                  <td>Earthfall</td>
-                  <td>2014</td>
-                  <td>648273001</td>
-                  <td>CA-112</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-    </div>
+      <?php include_once(ROOT_PATH."/models/bukusalinan.php");
+      ?>
   </div>
 <script>
   $(document).ready(function(){
