@@ -36,9 +36,9 @@ if(strlen($query) >= $min_length)
   $no_of_records_per_page = 10;
   $offset = ($pageno-1) * $no_of_records_per_page;
 
-  $total_pages_sql = "SELECT COUNT(*) FROM $table";
+  $total_pages_sql = "SELECT COUNT(*) FROM $table WHERE (`judul_buku` LIKE '%".$query."%') OR (`isbn` LIKE '%".$query."%') OR (`nomor_panggil` LIKE '%".$query."%') OR (`pengarang` LIKE '%".$query."%') OR (`kategori` LIKE '%".$query."%') OR (`jenis_bahan` LIKE '%".$query."%') OR (`penerbit` LIKE '%".$query."%')";
   $hsil = mysqli_query($con,$total_pages_sql);
-  $total_rows = mysqli_fetch_array($hsil)[0];
+  $total_rows = mysqli_fetch_array($hsil, MYSQLI_BOTH)[0];
   $total_pages = ceil($total_rows / $no_of_records_per_page);
 
   //sql query

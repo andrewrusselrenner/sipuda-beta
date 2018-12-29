@@ -34,7 +34,7 @@
                 //menghitung jumlah data yang ditemukan di db
                 $rowcount = $raw_results->num_rows;
 
-                printf("Ditemukan %d hasil pencarian.\n",$rowcount);
+                printf("Ditemukan %d hasil pencarian.\n",$total_rows);
             ?>
         </div>
       </div>
