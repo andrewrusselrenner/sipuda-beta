@@ -8,18 +8,16 @@
             </div>
 
             <div class="modal-body text-center p-3" id="pinjamDetail">
-            <p class="py-2">
-            <div id="modal-loader" style="display: none; text-align: center;">
-           <!-- ajax loader -->
-            <img src="https://static-steelkiwi-dev.s3.amazonaws.com/media/filer_public/4e/07/4e07eece-7c84-46e2-944d-1a6b856d7b5f/463ff844-6f36-4ffe-b051-fea983d39223.gif">
+                <p class="py-2">
+                <div id="modal-loader" style="display: none; text-align: center;">
+                    <!-- ajax loader -->
+                    <img src="https://static-steelkiwi-dev.s3.amazonaws.com/media/filer_public/4e/07/4e07eece-7c84-46e2-944d-1a6b856d7b5f/463ff844-6f36-4ffe-b051-fea983d39223.gif">
+                </div>                  
+                <div id="dynamic-content"></div>
             </div>
-                            
-           <!-- mysql data will be load here -->                          
-           <div id="dynamic-content">
-           <div class="modal-footer">
-            <button tupe="button" class=" btn btn-danger" data-dismiss="modal"> Tutup </button>
+            <div class="modal-footer">
+                <button tupe="button" class=" btn btn-danger" data-dismiss="modal"> Tutup </button>
             </div>
-        </div>
         </div>
     </div>
 </div>
