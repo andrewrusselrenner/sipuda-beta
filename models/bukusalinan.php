@@ -6,7 +6,7 @@ $qsalin->execute(array(':judulbuku' => $judulbuku));
 $hasilq = $qsalin->fetch();
 $hitung = 1;
 
-if($qsalin->rowCount() >= 1)
+if($qsalin->rowCount() <= 1)
 {
     if(isset($baris['kategori']))
     {
@@ -24,9 +24,9 @@ if($qsalin->rowCount() >= 1)
                 {
                     ?>
                     <div class="col-md-3 py-2">
-                        <div class="card d-block" style="height: 771px;">
+                        <div class="card d-block" style="height: 800px;">
                             <img class="card-img-center img-fluid" src= <?php echo $result['gambar'] ?> alt="Buku Perpus" style="height: 453px; width: 328px;">
-                            <div class="card-body">
+                            <div class="card-body" style="height: 270px">
                                 <h4 class="card-title"><?php echo $result['judul_buku'] ?></h4>
                                 <p class="card-text"><?php echo $result['pengarang'] ?> </p>
                                 <?php
@@ -81,9 +81,9 @@ if($qsalin->rowCount() >= 1)
                 {
                     ?>
                     <div class="col-md-3 py-2">
-                        <div class="card d-block" style="height: 771px;">
+                        <div class="card d-block" style="height: 800px;">
                             <img class="card-img-center img-fluid" src= <?php echo $result['gambar'] ?> alt="Buku Perpus" style="height: 453px; width: 328px;">
-                            <div class="card-body">
+                            <div class="card-body" style="height: 270px">
                                 <h4 class="card-title"><?php echo $result['judul_buku'] ?></h4>
                                 <p class="card-text"><?php echo $result['pengarang'] ?> </p>
                                 <?php
@@ -148,14 +148,14 @@ else if($qsalin->rowCount() >= 2)
               if($qsalin->rowCount() > 0)
               {
                   while($buku = $qsalin->fetch(PDO::FETCH_OBJ))
-                  {
-                      
+                  {     
+                      $nopang = htmlentities($buku->nomor_panggil);
                       echo "<tr>";
                         echo "<th scope='row'>".$hitung."</th>";
-                        echo "<td>".htmlentities($buku->judul_buku)."</td>";
+                        echo "<td><a href='viewbook?nopang=".$nopang."'>".htmlentities($buku->judul_buku)."</a></td>";
                         echo "<td>".date('Y', strtotime($buku->tahun_terbit))."</td>";
                         echo "<td>".htmlentities($buku->isbn)."</td>";
-                        echo "<td>".htmlentities($buku->nomor_panggil)."</td>";
+                        echo "<td>".$nopang."</td>";
                       echo "</tr>";
                       
                       $hitung=$hitung+1;
