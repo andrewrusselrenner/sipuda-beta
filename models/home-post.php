@@ -66,7 +66,9 @@ $hasilg = $postg->fetchAll(PDO::FETCH_OBJ);
       }
       ?>
     <div class="col-md-4 px-2">
-        <a class="twitter-timeline" data-height="480" data-theme="light" href="https://twitter.com/<?php echo $twitter; ?>?ref_src=twsrc%5Etfw">Tweets by <?php echo $twitter; ?></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <!-- InstaWidget -->
+        <a href="https://instawidget.net/v/user/_rjansyah" id="link-67a54475f87f59c41d32fca35945d478649d4f1c7c19e079043ef984b916c929" data-height="480">@_rjansyah</a>
+        <script src="https://instawidget.net/js/instawidget.js?u=67a54475f87f59c41d32fca35945d478649d4f1c7c19e079043ef984b916c929&width=400px"></script>
     </div>
 </div>
 <div class="py-5">
