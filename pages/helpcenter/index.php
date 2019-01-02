@@ -2,7 +2,7 @@
 require($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
 require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 
-$page_title = 'Katalog';
+$page_title = 'Pusat Bantuan';
 include(ROOT_PATH.'/pages/header.php');
 include_once(ROOT_PATH.'/config/timeago-function.php');
 ?>
