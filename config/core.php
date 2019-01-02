@@ -12,7 +12,7 @@ if(!isset($_SESSION))
 date_default_timezone_set('Asia/Makassar');
 
 // url halaman beranda
-$home_url="localhost/";
+$home_url="http://localhost:8012/";
 
 // Google ReCaptcha V2 (Checkbox) Setting Disini
 if(!defined('GSECRET_KEY')) define('GSECRET_KEY', '6LevK4QUAAAAAHCpg2O0kbnSAioXNh7KZTZO-pYO');
@@ -22,8 +22,8 @@ if(!defined('GSITE_KEY')) define('GSITE_KEY', '6LevK4QUAAAAAFqmQHpzTlK7HGYNq9hGl
 if(!defined('GCSECRET_KEY')) define('GCSECRET_KEY', '6LcmLYQUAAAAABVTn05T8F_sn2nSRHgd49gTmYei');
 if(!defined('GCSITE_KEY')) define('GCSITE_KEY', '6LcmLYQUAAAAAH7EnCZy_Aw-GIn1rW63Ka9W7IHt');
 
-// atau halaman berandanya disini
-if(!defined('BASE_URL')) define('BASE_URL', 'http://localhost/');
+// dan juga atur ini halaman berandanya disini
+if(!defined('BASE_URL')) define('BASE_URL', $home_url);
 
 // mendefinisikan direktori file-file php
 if(!defined('ROOT_PATH')) define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT']);
@@ -70,5 +70,5 @@ spl_autoload_register(function ($class) {
 
 if(!defined('FB_LINK')) define('FB_LINK', 'http://fb.com/'.$fb);
 if(!defined('IG_LINK')) define('IG_LINK', 'http://instagram.com/'.$ig);
-if(!defined('TWITTER_LINK')) define('TWITTER_LINK', 'http://twitter.com/'.$fb);
+if(!defined('TWITTER_LINK')) define('TWITTER_LINK', 'http://twitter.com/'.$twitter);
 ?>
