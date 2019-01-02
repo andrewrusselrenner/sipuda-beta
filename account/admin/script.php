@@ -1,5 +1,5 @@
 <script>
-/* must apply only after HTML has loaded */
+/* script tambah buku */
 $(document).ready(function () {
     $("#tambahbukuform").on("submit", function(e) {
         var postData = $(this).serializeArray();
@@ -29,7 +29,7 @@ $(document).ready(function () {
     });
 });
 
-// script hapus buku
+/* script hapus buku */
   $(document).ready(function(){
 	
 	$(document).on('click', '#hapus', function(e){
@@ -63,6 +63,36 @@ $(document).ready(function () {
 		
 	});
 	
+});
+
+/* script sunting buku */
+$(document).ready(function () {
+    $("#suntingbukuform").on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) {
+                //$('#suntingform')[0].reset();
+                $('#suntingbuku').modal('hide'); 
+                $('#suksesmodal2').modal('show');
+                //$('#suksesmodal .modal-header .modal-title').html("Sukses");
+                $('#suksesmodal2 .modal-body').html(data);
+                $('#bukutable').load('buku/tabel.php');
+                //$("#tambah").remove();
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+     
+    $("#sunting").on('click', function() {
+        $("#suntingbukuform").submit();
+    });
 });
 
 $(document).ready(function(){

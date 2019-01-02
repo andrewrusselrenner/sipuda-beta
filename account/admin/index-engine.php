@@ -50,4 +50,9 @@ $sql3 = $dbs->prepare('SELECT buku.nomor_panggil,buku.judul_buku,buku.pengarang,
 $sql3->execute();
 $results3=$sql3->fetchAll(PDO::FETCH_OBJ);
 $hitung2=1;
+
+// untuk cek jenis bahan apa saja yang ada
+$sqlkat = $dbs->prepare('SELECT * FROM jenis_bahan');
+$sqlkat->execute();
+$hasilkat = $sqlkat->fetchAll(PDO::FETCH_OBJ);
 ?>

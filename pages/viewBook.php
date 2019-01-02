@@ -2,9 +2,14 @@
 require($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
 require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 
-$lihatbuku = $dbs->prepare('SELECT * FROM buku WHERE nomor_panggil = :nomor_panggil');
+// buku
+$lihatbuku = $dbs->prepare('SELECT * FROM buku WHERE nomor_panggil=:nomor_panggil');
 $lihatbuku->execute(array(':nomor_panggil' => $_GET['nopang']));
 $baris = $lihatbuku->fetch();
+
+$cekbukupinjam = $dbs->prepare('SELECT * FROM peminjaman WHERE nomor_panggil_buku=:nomor_panggil');
+$cekbukupinjam->execute(array(':nomor_panggil' => $_GET['nopang']));
+$baris2 = $cekbukupinjam->fetch();
 
 //Jika buku tidak ada, alihkan pengguna ke beranda
 if($baris['nomor_panggil'] == '')
@@ -95,7 +100,7 @@ include('navbar.php');
                     echo "<p class='card-text'>Terdapat ".$baris['lbr_halaman']." halaman dibuku ini.</p>";
                     echo "<p class='card-text'><i>".$baris['kategori']."</i></p>";
                     
-                    if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota' && $baris['status_buku']=='1')
+                    if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Anggota' && $baris['status_buku']=='1' && !isset($baris2['is_accepted']))
                     {
                       
                       echo "<button data-toggle='modal' data-target='#pinjamModal' data-id='".$baris['nomor_panggil']."' id='pinjam' class='btn btn-outline-primary btn-lg'> Pinjam</button>";
@@ -106,8 +111,14 @@ include('navbar.php');
                     }
                     else if($_SESSION['Level_Akses']=='Admin' || $_SESSION['Level_Akses']=='Pustakawan')
                     {
-                      echo "<a href='".BASE_URL."account/admin/buku/editbuku?nopang=".$baris['nomor_panggil']."' class='btn btn-outline-primary'><i class='fas fa-edit '></i> Sunting</a>";
-                      echo "<a class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku'><i class='fas fa-trash '></i> Hapus</a>";
+                      // untuk cek jenis bahan apa saja yang ada
+                      $sqlkat = $dbs->prepare('SELECT * FROM jenis_bahan');
+                      $sqlkat->execute();
+                      $hasilkat = $sqlkat->fetchAll(PDO::FETCH_OBJ);
+
+                      echo "<a href='' class='btn btn-outline-primary' data-toggle='modal' data-target='#suntingbuku'><i class='fas fa-edit'></i> Sunting</a>";
+                      echo "<a href='' class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku'><i class='fas fa-trash '></i> Hapus</a>";
+                      include_once(ROOT_PATH."/account/admin/buku/suntingbuku.php");
                       include_once(ROOT_PATH."/account/admin/buku/hapusbuku.php");
                     }
                     else
@@ -157,77 +168,10 @@ include('navbar.php');
       ?>
     </div>
   </div>
-<script>
-  $(document).ready(function(){
-	
-	$(document).on('click', '#pinjam', function(e){
-		
-		e.preventDefault();
-		
-		var uid = $(this).data('id');   // it will get id of clicked row
-		
-		$('#dynamic-content').html(''); // leave it blank before ajax call
-		$('#modal-loader').show();      // load ajax loader
-		
-		$.ajax({
-			url: 'pinjam.php',
-			type: 'POST',
-			data: 'id='+uid,
-			dataType: 'html'
-		})
-		.done(function(data){
-			console.log(data);	
-			$('#dynamic-content').html('');    
-			$('#dynamic-content').html(data); // load response 
-			$('#modal-loader').hide();		  // hide ajax loader	
-		})
-		.fail(function(){
-			$('#dynamic-content').html('<i class="fa fas-info"></i> Something went wrong, Please try again...');
-			$('#modal-loader').hide();
-		});
-		
-	});
-	
-});
 
-// script hapus buku
-$(document).ready(function(){
-	
-	$(document).on('click', '#hapus', function(e){
-		
-		e.preventDefault();
-		
-		var uid = $(this).data('id');   // it will get id of clicked row
-		
-		$('#dynamic-content').html(''); // leave it blank before ajax call
-		$('#modal-loader').show();      // load ajax loader
-		
-		$.ajax({
-			url: '/account/admin/buku/delbook.php',
-			type: 'GET',
-			data: 'nopang='+uid,
-			dataType: 'html'
-		})
-		.done(function(data){
-			console.log(data);	
-			$('#dynamic-content').html('');    
-			$('#dynamic-content').html(data); // load response 
-            $('#modal-loader').hide();		  // hide ajax loader
-            windows.location("catalog/index.php");
-            $('#hapusbuku').modal('hide');	
-		})
-		.fail(function(){
-			$('#dynamic-content').html('<i class="fas fa-info"></i> Ada yang tidak beres. Coba lagi...');
-            $('#modal-loader').hide();
-            $('#hapusbuku').modal('hide');
-		});
-		
-	});
-	
-});
-</script>
 
 <?php
+include('script/viewBookScript.php');
 include('footer.php');
 
 /* tutup koneksi */
