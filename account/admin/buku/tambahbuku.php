@@ -83,9 +83,18 @@
             <div class="col-md-6">
               <div class="form-group"> <label for="jenisbahan">Jenis Bahan</label>
                 <select class="form-control bg-primary d-flex w-100 text-white" id="jenisbahan" name="jenisbahan">
-                  <option class="text-white" value="Monograf">Monograf</option>
-                  <option value="Digital" class="text-white">Digital</option>
-                  <option value="Komik" class="text-white">Komik</option>
+                <?php
+                  if($sqlkat->rowCount() > 0)
+                  {
+                      foreach($hasilkat as $hasilk)
+                      {
+                          echo "<option class='text-white' value=".htmlentities($hasilk->nama).">".htmlentities($hasilk->nama)."</option>";
+                      }
+                  }
+                  else{
+                      echo "<option class='text-white'>Tidak ada jenis bahan tercatat</option>";
+                  }
+                  ?>
                 </select>
               </div>
             </div>
