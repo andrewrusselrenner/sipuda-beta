@@ -42,14 +42,14 @@ require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
         if(isset($idpinjam))
         {
             $_SESSION['message']="Buku telah ditambahkan";
-            echo "<script>window.confirm('Sukses. Silahkan refresh halaman untuk update tabel.')</script>";
-            echo "<h1 class='text-center'>Sukses. Silahkan refresh halaman untuk update tabel.</h1>";
+            //echo "<script>window.confirm('Sukses. Silahkan refresh halaman untuk update tabel.')</script>";
+            echo "<h1 class='text-center'>Sukses. Buku telah ditambahkan dengan nomor panggil ".$idpinjam.".</h1>";
             //header('location:/account/admin');
         }
         else
         {
             $_SESSION['error']="Ada yang tidak beres. Mohon coba lagi.";
-            echo "<script>window.confirm('Galat, salah di sql nya kayanya')</script>";
+            //echo "<script>window.confirm('Galat, salah di sql nya kayanya')</script>";
             echo "<h1 class='text-center'>Ada yang aneh".$idpinjam."</h1>";
             //header("location:" . $_SERVER['HTTP_REFERER']);
         }

@@ -97,12 +97,6 @@ include(ROOT_PATH.'/pages/navbar.php');
                             <div class="col-md-12 d-flex align-items-center justify-content-between my-2">
                               <a href="../pages/catalog" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-book-reader"></i> Detil Pustaka
                               </a>
-                              <?php
-                              //echo "<button data-toggle='modal' data-target='#tambahbuku' data-id='".$nompang."' id='tambahbuku' class='btn btn-outline-primary btn-lg'><i class='fas fa-plus'></i> Tambah Buku</button>";
-                              //echo "<div class='modal-container'></div>";
-
-                              //include_once("buku/tambahbuku.php");
-                              ?>
                               <a href="" data-toggle="modal" data-target="#tambahbuku" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-plus"></i> Tambah Buku
                               </a>
                               <?php
@@ -112,98 +106,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                           </div>
                         </div>
                       </div>
-                      <div class="table-responsive" id="daftarbuku">
-                        <table class="table">
-                          <thead class="text-md-center">
-                            <tr>
-                              <th>#</th>
-                              <th>No.Panggil</th>
-                              <th>Judul Buku</th>
-                              <th>Pengarang</th>
-                              <th>Tahun Terbit</th>
-                              <th>Status Buku</th>
-                              <th>ISBN</th>
-                              <th>Penerbit</th>
-                              <th>Tanggal Ditambahkan</th>
-                              <th>Tanggal Perubahan</th>
-                              <th>Jumlah Salinan</th>
-                              <th>Jumlah Lembar</th>
-                              <th>Kategori</th>
-                              <th>Jenis Bahan</th>
-                              <th>Aksi</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                          <?php
-                          if($sql2->rowCount() > 0)
-                          {
-                            foreach($results2 as $result2)
-                            {
-                              // deklarasi supaya enak manggilnya
-                              $nompang = htmlentities($result2->nomor_panggil);
-                              $title = htmlentities($result2->judul_buku);
-                              $author1 = htmlentities($result2->pengarang);
-                              $tahuntbt = date('Y',strtotime($result2->tahun_terbit));
-                              $bkstatus = htmlentities($result2->status_buku);
-                              $isbnum = htmlentities($result2->isbn);
-                              $penerbit = htmlentities($result2->penerbit);
-                              $tgltbh = date('d M, Y',strtotime($result2->tgl_ditambahkan));
-                              $tglubah = date('d M, Y',strtotime($result2->tgl_perubahan));
-                              $copies = htmlentities($result2->numofcopies);
-                              $lbrhal = htmlentities($result2->lbr_halaman);
-                              $kategori = htmlentities($result2->kategori);
-                              $jbahan = htmlentities($result2->jenis_bahan);
-
-                              //mengconvert dari angka ke string
-                              if($bkstatus == '0')
-                              {
-                                $statusbuku = 'Sedang Dipinjam';
-                              }
-                              else if($bkstatus == '1')
-                              {
-                                $statusbuku = 'Tersedia';
-                              }
-                              else if($bkstatus == '2')
-                              {
-                                $statusbuku = 'Hilang';
-                              }
-                              else
-                              {
-                                $statusbuku = 'Tidak diketahui keadaannya';
-                              }
-                              ?>
-                              <tr>
-                                <td><?php echo $hitung;?></td>
-                                <td><?php echo $nompang;?></td>
-                                <td><?php echo $title;?></td>
-                                <td><?php echo $author1;?></td>
-                                <td><?php echo $tahuntbt;?></td>
-                                <td><?php echo $statusbuku;?></td>
-                                <td><?php echo $isbnum;?></td>
-                                <td><?php echo $penerbit;?></td>
-                                <td><?php echo $tgltbh;?></td>
-                                <td><?php echo $tglubah;?></td>
-                                <td><?php echo $copies." buku";?></td>
-                                <td><?php echo $lbrhal." hal.";?></td>
-                                <td><?php echo $kategori;?></td>
-                                <td><?php echo $jbahan;?></td>
-                              
-                                <td>
-                                <?php 
-                                echo "<a href='".BASE_URL."pages/viewBook?nopang=".$nompang."' class='btn btn-outline-primary'><i class='fas fa-book-open '></i>Detil</a>";
-                                echo "<a href='".BASE_URL."account/admin/buku/editbuku?nopang=".$nompang."' class='btn btn-outline-primary'><i class='fas fa-edit '></i>Sunting</a>";
-                                echo "<a href='".BASE_URL."account/admin/buku/delbuku?nopang=".$nompang."' class='btn btn-outline-danger'><i class='fas fa-trash '></i>Hapus</a>";
-                                ?>
-                                </td>
-                                <?php
-                                $hitung=$hitung+1;
-                            }
-                          }
-                                ?>
-                              </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                      <div id="bukutable"></div>
                       
                       <!--<script async type="text/javascript">
 	                    $(document).ready(function(){
@@ -221,6 +124,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                         <table class="table">
                           <thead class="text-md-center">
                             <tr>
+                              <th>Aksi</th>
                               <th>#</th>
                               <th>No.Panggil</th>
                               <th>Judul Buku</th>
@@ -230,7 +134,6 @@ include(ROOT_PATH.'/pages/navbar.php');
                               <th>ISBN</th>
                               <th>Tanggal Peminjaman</th>
                               <th>Tanggal Pengembalian</th>
-                              <th>Aksi</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -268,7 +171,14 @@ include(ROOT_PATH.'/pages/navbar.php');
                               }
                               ?>
                               <tr>
-                                <td><?php echo $hitung;?></td>
+                                <td>
+                                <?php 
+                                echo "<a href='".BASE_URL."pages/viewBook?nopang=".$nopang."' class='btn btn-outline-primary'><i class='fas fa-book-open '></i> Detil</a>";
+                                echo "<a href='".BASE_URL."account/admin/buku/perpanjangbuku?nopang=".$nopang."' class='btn btn-outline-primary'><i class='fas fa-edit '></i> Perpanjang</a>";
+                                echo "<a class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku'><i class='fas fa-trash '></i> Hapus</a>";
+                                ?>
+                                </td>
+                                <td><?php echo $hitung2;?></td>
                                 <td><?php echo $nopang;?></td>
                                 <td><?php echo $judul;?></td>
                                 <td><?php echo $author;?></td>
@@ -276,15 +186,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                                 <td><?php echo $status_buku;?></td>
                                 <td><?php echo $isbn;?></td>
                                 <td><?php echo $tglpeminjaman;?></td>
-                                <td><?php echo $tglpengembalian;?></td>
-                              
-                                <td>
-                                <?php 
-                                echo "<a href='".BASE_URL."pages/viewBook?nopang=".$nopang."' class='btn btn-outline-primary'><i class='fas fa-book-open '></i>Detil</a>";
-                                echo "<a href='".BASE_URL."account/admin/buku/perpanjangbuku?nopang=".$nopang."' class='btn btn-outline-primary'><i class='fas fa-edit '></i>Perpanjang</a>";
-                                echo "<a href='".BASE_URL."account/admin/buku/delpinjam?nopang=".$nopang."' class='btn btn-outline-danger'><i class='fas fa-trash '></i>Hapus</a>";
-                                ?>
-                                </td>
+                                <td><?php echo $tglpengembalian;?></td> 
                                 <?php
                                 $hitung2=$hitung2+1;
                             }
@@ -327,37 +229,8 @@ include(ROOT_PATH.'/pages/navbar.php');
       </div>
     </div>
   </div>
-  <script>
-/* must apply only after HTML has loaded */
-$(document).ready(function () {
-    $("#tambahbukuform").on("submit", function(e) {
-        var postData = $(this).serializeArray();
-        var formURL = $(this).attr("action");
-        $.ajax({
-            url: formURL,
-            type: "POST",
-            data: postData,
-            success: function(data, textStatus, jqXHR) {
-                $('#tambahbukuform')[0].reset();
-                $('#tambahbuku').modal('hide'); 
-                $('#suksesmodal').modal('show');
-                //$('#suksesmodal .modal-header .modal-title').html("Sukses");
-                $('#suksesmodal .modal-body').html(data);
-                //$("#tambah").remove();
-            },
-            error: function(jqXHR, status, error) {
-                console.log(status + ": " + error);
-            }
-        });
-        e.preventDefault();
-    });
-     
-    $("#tambah").on('click', function() {
-        $("#tambahbukuform").submit();
-    });
-});
-</script>
 
 <?php
+include_once('script.php');
 include(ROOT_PATH.'/pages/footer.php');
 ?>
