@@ -103,7 +103,14 @@ include('navbar.php');
                       include_once("pinjamModal.php");
                       //echo "</div>";
                       //echo "</div>";
-                    } else
+                    }
+                    else if($_SESSION['Level_Akses']=='Admin' || $_SESSION['Level_Akses']=='Pustakawan')
+                    {
+                      echo "<a href='".BASE_URL."account/admin/buku/editbuku?nopang=".$baris['nomor_panggil']."' class='btn btn-outline-primary'><i class='fas fa-edit '></i> Sunting</a>";
+                      echo "<a class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku'><i class='fas fa-trash '></i> Hapus</a>";
+                      include_once(ROOT_PATH."/account/admin/buku/hapusbuku.php");
+                    }
+                    else
                     {
                       // Nothing happened lel
                     }
@@ -177,6 +184,42 @@ include('navbar.php');
 		.fail(function(){
 			$('#dynamic-content').html('<i class="fa fas-info"></i> Something went wrong, Please try again...');
 			$('#modal-loader').hide();
+		});
+		
+	});
+	
+});
+
+// script hapus buku
+$(document).ready(function(){
+	
+	$(document).on('click', '#hapus', function(e){
+		
+		e.preventDefault();
+		
+		var uid = $(this).data('id');   // it will get id of clicked row
+		
+		$('#dynamic-content').html(''); // leave it blank before ajax call
+		$('#modal-loader').show();      // load ajax loader
+		
+		$.ajax({
+			url: '/account/admin/buku/delbook.php',
+			type: 'GET',
+			data: 'nopang='+uid,
+			dataType: 'html'
+		})
+		.done(function(data){
+			console.log(data);	
+			$('#dynamic-content').html('');    
+			$('#dynamic-content').html(data); // load response 
+            $('#modal-loader').hide();		  // hide ajax loader
+            windows.location("catalog/index.php");
+            $('#hapusbuku').modal('hide');	
+		})
+		.fail(function(){
+			$('#dynamic-content').html('<i class="fas fa-info"></i> Ada yang tidak beres. Coba lagi...');
+            $('#modal-loader').hide();
+            $('#hapusbuku').modal('hide');
 		});
 		
 	});
