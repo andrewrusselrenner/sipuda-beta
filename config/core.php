@@ -29,6 +29,7 @@ $thelogo = "https://i.imgur.com/C1c0at7.png";
 
 if(!defined('THELOGOTHE')) define('THELOGO', $thelogo);
 
+// Nama webnya
 $appname = "SIPUDA LMS Web";
 
 // Google ReCaptcha V2 (Checkbox) Setting Disini

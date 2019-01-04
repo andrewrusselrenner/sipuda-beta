@@ -4,7 +4,7 @@
       <!--
         nanti logo taro disini
       -->
-      <a class="navbar-brand js-scroll-trigger " href=<?php echo BASE_URL ?>>Sipuda Web App</a>
+      <a class="navbar-brand js-scroll-trigger " href=<?php echo BASE_URL ?>><?php echo $appname ?></a>
       <!-- kalo misalnya layarnya tambah mengecil -->
       <button class="navbar-toggler navbar-toggler-right shadow p-3" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="text-shadow: black 0px 0px 8px;"> Menu <i class="fa fa-bars"></i>
         <!--<span class="navbar-toggler-icon"></span>-->
