@@ -143,6 +143,7 @@ else{
       </div>
     </div>
   </div>
+  
   <!-- Modal jika sukses -->
 <div class="modal fade" id="suksesmodal2">
   <div class="modal-dialog">
@@ -163,7 +164,6 @@ else{
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
       </div>
-
     </div>
   </div>
 </div>
