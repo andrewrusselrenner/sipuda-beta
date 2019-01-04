@@ -1,5 +1,40 @@
-<!-- The Modal -->
-<div class="modal fade" id="hapusbuku<?php echo $nompang ?>">
+<?php
+$url = $_SERVER['REQUEST_URI'];
+
+if (strpos($url,'viewBook') !== false)
+{
+    $juduls = $baris['judul_buku'];
+    $desks = $baris['deskripsi_singkat'];
+    $authors = $baris['pengarang'];
+    $ttb = date("Y-m-d", strtotime($baris['tahun_terbit']));
+    $availability = $status_buku;
+    $hals = $baris['lbr_halaman'];
+    $categorys = $baris['kategori'];
+    $nopangs = $baris['nomor_panggil'];
+    $isbns = $baris['isbn'];
+    $penerbits = $baris['penerbit'];
+    $salinans = $baris['numofcopies'];
+    $gambars = $baris['gambar'];
+}
+else{
+    $juduls = $title;
+    $desks = $desksing;
+    $authors = $author1;
+    $ttb = $tahuntbt2;
+    $availability = $statusbuku;
+    $hals = $lbrhal;
+    $categorys = $kategori;
+    $nopangs = $nompang;
+    $isbns = $isbnum;
+    $penerbits = $penerbit;
+    $salinans = $copies;
+    $gambars = $gambar;
+}
+
+?> 
+
+<!-- Hapus buku Modal -->
+<div class="modal fade" id="hapusbuku<?php echo $nopangs ?>">
   <div class="modal-dialog">
     <div class="modal-content">
 
