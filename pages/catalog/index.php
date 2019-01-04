@@ -31,7 +31,7 @@ include_once(ROOT_PATH.'/config/timeago-function.php');
     ?>
 <body>
   <?php include(ROOT_PATH.'/pages/navbar.php'); ?>
-  <div class="py-5 text-center section-parallax" style="background-image: url(&quot;http://hdqwalls.com/wallpapers/christopher-robin-2018-movie-poster-3r.jpg&quot;);">
+  <div class="py-5 text-center section-parallax" style="background-image: url(&quot;<?php echo $coverbkg ?>&quot;);">
     <div class="container-fluid">
       <div class="row my-3 mx-auto col-md-6 p-3 section-lighttwo">
         <div class="mx-auto col-md-10 p-3">

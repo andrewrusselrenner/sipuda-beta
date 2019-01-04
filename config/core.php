@@ -16,8 +16,20 @@ $coverbkg = "http://hdqwalls.com/wallpapers/christopher-robin-2018-movie-poster-
 
 if(!defined('COVER_BACKG')) define('COVER_BACKG', $coverbkg);
 
+// atur default gambar cover untuk login & pendaftaran berupa url yachh
+$coverbkglog = "https://i.imgur.com/g1Sg25V.png";
+
+if(!defined('COVER_BACKGLOG')) define('COVER_BACKGLOG', $coverbkglog);
+
 // url halaman beranda. Jangan dihapus yang "/" setelah url itu.
 $home_url="http://localhost:8012/";
+
+// atur default gambar cover untuk login & pendaftaran berupa url yachh
+$thelogo = "https://i.imgur.com/C1c0at7.png";
+
+if(!defined('THELOGOTHE')) define('THELOGO', $thelogo);
+
+$appname = "SIPUDA LMS Web";
 
 // Google ReCaptcha V2 (Checkbox) Setting Disini
 if(!defined('GSECRET_KEY')) define('GSECRET_KEY', '6LevK4QUAAAAAHCpg2O0kbnSAioXNh7KZTZO-pYO');

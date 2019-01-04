@@ -10,13 +10,13 @@ include_once(ROOT_PATH.'/pages/header.php');
 ?>
 
 <body>
-  <div class="main-page py-5 text-center d-flex flex-column flex-fill" style="background-image: url('https://i.imgur.com/g1Sg25V.png'); height: 100%;	background-size: cover;	background-position: center;	background-repeat: no-repeat; background-attachment: fixed;">
+  <div class="main-page py-5 text-center d-flex flex-column flex-fill" style="background-image: url('<?php echo $coverbkglog ?>'); height: 100%;	background-size: cover;	background-position: center;	background-repeat: no-repeat; background-attachment: fixed;">
     <div class="container">
       <div class="row">
         <div class="mx-auto col-md-6 col-10 bg-white p-4 shadow-lg">
           <div class="row">
             <div class="px-0 col-md-1 py-1">
-              <img src="https://i.imgur.com/C1c0at7.png" class="img-responsive img-thumbnail shadow-sm" width="47">
+              <img src="<?php echo $thelogo ?>" class="img-responsive img-thumbnail shadow-sm" width="47">
             </div>
             <div class="col-md-0">
               <h2 class="my-1 text-left text-uppercase mx-1">Sipuda</h2>

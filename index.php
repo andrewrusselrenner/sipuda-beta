@@ -1,11 +1,14 @@
 <?php 
+require($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
+require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
+
 $page_title = 'Beranda';
 include('pages/header.php'); 
 ?>
 <body>
     <?php include('pages/navbar.php'); ?>
       <!-- gambar header -->
-  <div class="py-5 text-center text-md-right section-parallax" style="	background-image: url(&quot;http://hdqwalls.com/wallpapers/christopher-robin-2018-movie-poster-3r.jpg&quot;);	background-position: right top;	background-size: cover;	background-repeat: repeat;	background-attachment: fixed;">
+  <div class="py-5 text-center text-md-right section-parallax" style="	background-image: url(&quot;<?php echo $coverbkg ?>&quot;);	background-position: right top;	background-size: cover;	background-repeat: repeat;	background-attachment: fixed;">
     <div class="container">
       <div class="row section-light shadow">
         <div class="p-5 mx-auto mx-md-0 ml-md-auto col-10 col-md-9">

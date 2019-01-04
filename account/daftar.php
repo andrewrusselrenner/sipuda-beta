@@ -11,14 +11,14 @@ include_once(ROOT_PATH.'/pages/header.php');
 ?>
 
 <body>
-  <div class="main-page py-2 text-center d-flex flex-column flex-fill" style="background-image: url('https://i.imgur.com/g1Sg25V.png');	width: 100%;	background-size: cover;	background-position: center;	background-repeat: no-repeat; background-attachment: fixed;">
+  <div class="main-page py-2 text-center d-flex flex-column flex-fill" style="background-image: url('<?php echo $coverbkglog ?>');	width: 100%;	background-size: cover;	background-position: center;	background-repeat: no-repeat; background-attachment: fixed;">
     <div class="py-4 text-center">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg col-10 bg-white p-3 mx-5 shadow-lg">
             <div class="row">
               <div class="px-0 col-md-1 py-2">
-                <img src="https://i.imgur.com/C1c0at7.png" class="img-responsive img-thumbnail shadow-sm" width="77">
+                <img src="<?php echo $thelogo ?>" class="img-responsive img-thumbnail shadow-sm" width="77">
               </div>
               <div class="col-md-0">
                 <h3 class="display-3 font-weight-bold">SIPUDA</h3>
