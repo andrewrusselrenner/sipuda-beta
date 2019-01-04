@@ -141,7 +141,7 @@ $(document).ready(function(){
 	
 });
 
-/* script tambah buku */
+/* script tambah peminjaman buku */
 $(document).ready(function () {
     $("#tambahpinjamform").on("submit", function(e) {
         var postData = $(this).serializeArray();
@@ -169,6 +169,42 @@ $(document).ready(function () {
     $("#tambahin").on('click', function() {
         $("#tambahpinjamform").submit();
     });
+});
+
+/* script perpanjang buku */
+$(document).ready(function(){
+	
+	$(document).on('click', '#panjang', function(e){
+		
+		e.preventDefault();
+		
+		var uid = $(this).data('id');   // it will get id of clicked row
+		
+		$('#dynamic-content5').html(''); // leave it blank before ajax call
+		$('#modal-loader5').show();      // load ajax loader
+		
+		$.ajax({
+			url: 'peminjaman/perpanjangpinjam.php',
+			type: 'GET',
+			data: 'nopang='+uid,
+			dataType: 'html'
+		})
+		.done(function(data){
+			console.log(data);	
+			$('#dynamic-content5').html('');    
+			$('#dynamic-content5').html(data); // load response 
+            $('#modal-loader5').hide();		  // hide ajax loader
+            $('#pinjamtable').load('peminjaman/tabel.php');
+            $('#panjangbuku').modal('hide');	
+		})
+		.fail(function(){
+			$('#dynamic-content').html('<i class="fas fa-info"></i> Ada yang tidak beres. Coba lagi...');
+            $('#modal-loader').hide();
+            $('#panjangbuku').modal('hide');
+		});
+		
+	});
+	
 });
 
 /* load tabel pinjam */
