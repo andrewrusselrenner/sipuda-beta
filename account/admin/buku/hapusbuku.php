@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div class="modal fade" id="hapusbuku">
+<div class="modal fade" id="hapusbuku<?php echo $nompang ?>">
   <div class="modal-dialog">
     <div class="modal-content">
 

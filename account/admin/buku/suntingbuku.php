@@ -33,7 +33,7 @@ else{
 
 ?>  
   
-  <div class="modal fade" id="suntingbuku" tabindex="-1" role="dialog" aria-labelledby="suntingbukuLabel" aria-hidden="true" style="display: none;">
+  <div class="modal fade" id="suntingbuku<?php echo $nompang ?>" tabindex="-1" role="dialog" aria-labelledby="suntingbukuLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">

@@ -116,8 +116,8 @@ include('navbar.php');
                       $sqlkat->execute();
                       $hasilkat = $sqlkat->fetchAll(PDO::FETCH_OBJ);
 
-                      echo "<a href='' class='btn btn-outline-primary' data-toggle='modal' data-target='#suntingbuku'><i class='fas fa-edit'></i> Sunting</a>";
-                      echo "<a href='' class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku'><i class='fas fa-trash '></i> Hapus</a>";
+                      echo "<a href='' class='btn btn-outline-primary' data-toggle='modal' data-target='#suntingbuku".$baris['nomor_panggil']."'><i class='fas fa-edit'></i> Sunting</a>";
+                      echo "<a href='' class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku".$baris['nomor_panggil']."'><i class='fas fa-trash '></i> Hapus</a>";
                       include_once(ROOT_PATH."/account/admin/buku/suntingbuku.php");
                       include_once(ROOT_PATH."/account/admin/buku/hapusbuku.php");
                     }

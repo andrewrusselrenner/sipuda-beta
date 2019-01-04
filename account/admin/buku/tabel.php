@@ -5,6 +5,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/account/admin/index-engine.php');
     <table class="table">
         <thead class="text-md-center">
             <tr>
+                <th>Aksi</th>
                 <th>#</th>
                 <th>No.Panggil</th>
                 <th>Judul Buku</th>
@@ -18,8 +19,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/account/admin/index-engine.php');
                 <th>Jumlah Salinan</th>
                 <th>Jumlah Lembar</th>
                 <th>Kategori</th>
-                <th>Jenis Bahan</th>
-                <th>Aksi</th>
+                <th>Jenis Bahan</th> 
             </tr>
         </thead>
         <tbody>
@@ -65,6 +65,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/account/admin/index-engine.php');
                     }
         ?>
                     <tr>
+                        <td>
+                        <?php 
+                        echo "<a href='".BASE_URL."pages/viewBook?nopang=".$nompang."' class='btn btn-outline-primary'><i class='fas fa-book-open '></i> Detil</a>";
+                        echo "<a href='' class='btn btn-outline-primary' data-toggle='modal' data-target='#suntingbuku".$nompang."'><i class='fas fa-edit'></i> Sunting</a>";
+                        echo "<a href='' class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku".$nompang."'><i class='fas fa-trash '></i> Hapus</a>";
+                        include("hapusbuku.php");
+                        include("suntingbuku.php");
+                        ?>
+                        </td>
                         <td><?php echo $hitung;?></td>
                         <td><?php echo $nompang;?></td>
                         <td><?php echo $title;?></td>
@@ -79,16 +88,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/account/admin/index-engine.php');
                         <td><?php echo $lbrhal." hal.";?></td>
                         <td><?php echo $kategori;?></td>
                         <td><?php echo $jbahan;?></td>
-                              
-                        <td>
-                        <?php 
-                        echo "<a href='".BASE_URL."pages/viewBook?nopang=".$nompang."' class='btn btn-outline-primary'><i class='fas fa-book-open '></i> Detil</a>";
-                        echo "<a href='' class='btn btn-outline-primary' data-toggle='modal' data-target='#suntingbuku'><i class='fas fa-edit'></i> Sunting</a>";
-                        echo "<a href='' class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku'><i class='fas fa-trash '></i> Hapus</a>";
-                        include_once("hapusbuku.php");
-                        include_once("suntingbuku.php");
-                        ?>
-                        </td>
+                        
                         <?php
                         $hitung=$hitung+1;
                 }
