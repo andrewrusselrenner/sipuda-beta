@@ -11,7 +11,12 @@ if(!isset($_SESSION))
 // atur default zona waktu, pake WITA Makassar
 date_default_timezone_set('Asia/Makassar');
 
-// url halaman beranda
+// atur default gambar cover berupa url yachh
+$coverbkg = "http://hdqwalls.com/wallpapers/christopher-robin-2018-movie-poster-3r.jpg";
+
+if(!defined('COVER_BACKG')) define('COVER_BACKG', $coverbkg);
+
+// url halaman beranda. Jangan dihapus yang "/" setelah url itu.
 $home_url="http://localhost:8012/";
 
 // Google ReCaptcha V2 (Checkbox) Setting Disini
