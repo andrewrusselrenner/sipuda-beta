@@ -13,6 +13,6 @@ if (ini_get("session.use_cookies")) {
 }
 unset($_SESSION['masuk']);
 session_destroy(); // destroy session
-header("location: ".$_SERVER['HTTP_REFERRER']);
+header("location: ".$_SERVER['HTTP_REFERER']);
 exit();
 ?>
