@@ -1,6 +1,6 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
-require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
+//require($_SERVER['DOCUMENT_ROOT'].'/config/dbconnection.php');
+//require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 
 // Fetching semua buku
     $query = "SELECT * FROM buku WHERE tgl_ditambahkan ORDER BY buku.tgl_ditambahkan DESC LIMIT 8";

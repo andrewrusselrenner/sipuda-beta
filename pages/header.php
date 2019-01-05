@@ -92,15 +92,16 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
             }
         }
     </script>
-
+<!--
 <script>
     function cekEmail() 
     {
         $("#loaderIcon").show();
+        var surel = $('#surel').val();
         jQuery.ajax(
         {
             url: "/models/ceksurel.php",
-            data:'surel='+$("#surel").val(),
+            data:{'surel' : surel},
             type: "POST",
         
             success:function(data)
@@ -112,6 +113,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
         });
     }
 </script>
+-->
     <?php
   }
   else
