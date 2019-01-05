@@ -4,7 +4,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
 if(empty($_SESSION['masuk']) && $_SESSION['masuk']==false)
 {
 
-include('register-engine.php');
+include('register-check.php');
+//include('register-engine.php');
 
 $page_title = 'Daftar Akun SIPUDA';
 include_once(ROOT_PATH.'/pages/header.php');
@@ -25,7 +26,7 @@ include_once(ROOT_PATH.'/pages/header.php');
               </div>
             </div>
             <h1 class="text-left mt-4 font-weight-bold">Pendaftaran</h1>
-            <p class="mb-3 text-left">Sudah punya akun? <a href=<?php BASE_URL."account/login";?>>Masuk</a></p>
+            <p class="mb-3 text-left">Sudah punya akun? <a href="<?php echo BASE_URL?>account/login">Masuk</a></p>
             <?php if(isset($error_msg)){ echo $error_msg; } ?>
             <form class="text-left" name="daftar" method="POST" id="daftarForm" onsubmit="return pwvalidasi();">
             <script>
@@ -118,6 +119,7 @@ include_once(ROOT_PATH.'/pages/header.php');
         </div>
       </div>
     </div>
+    <script async src="<?php echo BASE_URL."vendor/js/check.js"?>"></script>
     <?php
     if(isset($script)){ echo $script; };
     include(ROOT_PATH.'/pages/script.php');

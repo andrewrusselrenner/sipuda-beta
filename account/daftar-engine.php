@@ -1,8 +1,8 @@
 <?php
 include(ROOT_PATH.'/config/dbconnection.php');
-if(isset($_POST['daftar']))
-{
-    if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) 
+
+
+if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) 
     {
 
         //your site secret key
@@ -102,5 +102,6 @@ if(isset($_POST['daftar']))
         $error_msg = "<div class='login-modal'>Galat! Bot yaa? jangan refresh terus sayy...</div>";
         $script =  "<script> $(document).ready(function(){ $('#daftar-modal').modal('show'); }); </script>";
     }
-}
+
+
 ?>
