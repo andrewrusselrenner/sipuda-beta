@@ -28,7 +28,18 @@ $('document').ready(function(){
        }
      });
     });
-    */		
+    */
+
+   $('#sandi, #konfirmasikatasandi').on('keyup', function () {
+        if ($('#sandi').val() == $('#konfirmasikatasandi').val()) {
+            sandi_state = true;
+            $('#message').html('Cocok').css('color', 'green');
+        } else             
+            sandi_state = false;
+            $('#message').html('Tidak Cocok. Mohon dicocokkan.').css('color', 'red');
+    });
+
+
      $('#surel').on('blur', function(){
         var surel = $('#surel').val();
         if (surel == '') {
@@ -72,8 +83,8 @@ $('document').ready(function(){
         var tgllahir = $('#tgllahir').val();
         var gender = $('#gender').val();
         var jobstatus = $('#jobstatus').val();
-        if (email_state == false) {
-         $('#error_msg').text('Fix the errors in the form first');
+        if (email_state == false || sandi_state == false) {
+         $('#error_msg').text('Mohon perbaiki error yang terdapat di kolom.');
        }else{
          // proceed with form submission
          $.ajax({
