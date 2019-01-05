@@ -22,7 +22,7 @@ if(isset($_POST['masuk']))
         {
             $email = $_POST['surel'];
             $password = $_POST['katasandi'];
-            $sql = "SELECT id,surel,katasandi,IDAnggota,status,level_akses FROM anggota WHERE surel=:surel and katasandi=PASSWORD(:katasandi)";
+            $sql = "SELECT * WHERE surel=:surel and katasandi=PASSWORD(:katasandi)";
             $query = $dbs -> prepare($sql);
             $query-> bindParam(':surel', $email, PDO::PARAM_STR);
             $query-> bindParam(':katasandi', $password, PDO::PARAM_STR);
