@@ -52,7 +52,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
   
   <!-- JQuery CDN dari Microsoft -->
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" async></script>
-  <?php include_once('script.php'); ?>
+  <?php include_once($_SERVER['DOCUMENT_ROOT'].'/pages/script.php'); ?>
 
   <?php
   $loginpage = '/account/login';
