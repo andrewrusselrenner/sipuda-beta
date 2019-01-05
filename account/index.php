@@ -147,6 +147,6 @@ else if($_SESSION['Level_Akses']=='Admin')
 }
 else
 {
-  header("location:" . $_SERVER['HTTP_REFERER']);
+  header("location:" . $_SERVER['DOCUMENT_ROOT']);
 }
 ?>

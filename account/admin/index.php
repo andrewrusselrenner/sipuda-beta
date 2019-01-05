@@ -9,6 +9,8 @@ if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Aks
 
 include_once('index-engine.php');
 
+if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Akses']=='Admin')
+{
 $page_title = 'Pustakawan';
 include(ROOT_PATH.'/pages/header.php');
 include(ROOT_PATH.'/pages/navbar.php');
@@ -157,4 +159,13 @@ include(ROOT_PATH.'/pages/navbar.php');
 <?php
 include_once('script.php');
 include(ROOT_PATH.'/pages/footer.php');
+}
+else if($_SESSION['Level_Akses']=='Anggota')
+{
+  header("location: /account/index");
+}
+else
+{
+  header("location:" . $_SERVER['DOCUMENT_ROOT']);
+}
 ?>
