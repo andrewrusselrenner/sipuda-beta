@@ -27,7 +27,7 @@ $home_url="http://localhost:8012/";
 // atur default gambar cover untuk login & pendaftaran berupa url yachh
 $thelogo = "https://i.imgur.com/C1c0at7.png";
 
-if(!defined('THELOGOTHE')) define('THELOGO', $thelogo);
+if(!defined('THELOGO')) define('THELOGO', $thelogo);
 
 // Nama webnya
 $appname = "SIPUDA LMS Web";
