@@ -1,0 +1,10 @@
+[06-Jan-2019 19:34:48 Asia/Makassar] PHP Notice:  Undefined property: stdClass::$score in /home/sipudaxy/public_html/account/login-engine.php on line 20
+[06-Jan-2019 21:49:51 Asia/Makassar] PHP Notice:  Undefined property: stdClass::$score in /home/sipudaxy/public_html/account/login-engine.php on line 20
+[06-Jan-2019 21:51:57 Asia/Makassar] PHP Notice:  Undefined property: stdClass::$score in /home/sipudaxy/public_html/account/login-engine.php on line 20
+[06-Jan-2019 22:28:42 Asia/Makassar] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY000]: General error: 1364 Field 'IDAnggota' doesn't have a default value in /home/sipudaxy/public_html/account/register-engine.php on line 53
+[06-Jan-2019 22:34:20 Asia/Makassar] PHP Notice:  Undefined property: stdClass::$score in /home/sipudaxy/public_html/account/login-engine.php on line 20
+[06-Jan-2019 23:03:53 Asia/Makassar] PHP Notice:  Undefined property: stdClass::$score in /home/sipudaxy/public_html/account/login-engine.php on line 20
+[07-Jan-2019 00:05:08 Asia/Makassar] PHP Notice:  Undefined property: stdClass::$score in /home/sipudaxy/public_html/account/login-engine.php on line 20
+[07-Jan-2019 01:01:33 Asia/Makassar] PHP Notice:  Undefined index: masuk in /home/sipudaxy/public_html/account/engine/index-engine.php on line 5
+[07-Jan-2019 01:01:33 Asia/Makassar] PHP Notice:  Undefined index: Level_Akses in /home/sipudaxy/public_html/account/index.php on line 144
+[07-Jan-2019 01:02:12 Asia/Makassar] PHP Notice:  Undefined property: stdClass::$score in /home/sipudaxy/public_html/account/login-engine.php on line 20

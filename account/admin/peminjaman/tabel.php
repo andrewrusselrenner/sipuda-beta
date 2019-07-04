@@ -56,7 +56,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/account/admin/index-engine.php');
                 <td>
                 <?php 
                 echo "<a href='".BASE_URL."pages/viewBook?nopang=".$nopang."' class='btn btn-outline-primary'><i class='fas fa-book-open '></i> Detil</a>";
-                echo "<a href='".BASE_URL."account/admin/pinjam/perpanjangbuku?nopang=".$nopang."' class='btn btn-outline-primary'><i class='fas fa-edit '></i> Perpanjang</a>";
+                //echo "<a href='".BASE_URL."account/admin/pinjam/perpanjangbuku?nopang=".$nopang."' class='btn btn-outline-primary'><i class='fas fa-edit '></i> Perpanjang</a>";
                 echo "<a href='' class='btn btn-outline-primary' data-toggle='modal' data-target='#suntingpinjam".htmlentities($result3->id_peminjaman)."'><i class='fas fa-check'></i> Acc Peminjaman</a>";
                 echo "<a href='' class='btn btn-outline-info' data-toggle='modal' data-target='#panjangbuku".htmlentities($result3->id_peminjaman)."'><i class='fas fa-calendar-day '></i> Perpanjang</a>";
                 include("suntingpinjam.php");

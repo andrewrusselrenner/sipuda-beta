@@ -22,7 +22,7 @@ $coverbkglog = "https://i.imgur.com/g1Sg25V.png";
 if(!defined('COVER_BACKGLOG')) define('COVER_BACKGLOG', $coverbkglog);
 
 // url halaman beranda. Jangan dihapus yang "/" setelah url itu.
-$home_url="http://localhost:8012/";
+$home_url="http://sipuda.com/";
 
 // atur default gambar cover untuk login & pendaftaran berupa url yachh
 $thelogo = "https://i.imgur.com/C1c0at7.png";
@@ -33,12 +33,12 @@ if(!defined('THELOGO')) define('THELOGO', $thelogo);
 $appname = "SIPUDA LMS Web";
 
 // Google ReCaptcha V2 (Checkbox) Setting Disini
-if(!defined('GSECRET_KEY')) define('GSECRET_KEY', '6LevK4QUAAAAAHCpg2O0kbnSAioXNh7KZTZO-pYO');
-if(!defined('GSITE_KEY')) define('GSITE_KEY', '6LevK4QUAAAAAFqmQHpzTlK7HGYNq9hGl5iW2UGg');
+if(!defined('GSECRET_KEY')) define('GSECRET_KEY', '6LfCDYcUAAAAAO5UUxjWYNN6yA4UdzCvkwQ6Sphl');
+if(!defined('GSITE_KEY')) define('GSITE_KEY', '6LfCDYcUAAAAABS5YJtNp48QFjGn1lWHHtXN7ExW');
 
 // Google ReCaptcha V3 Setting Disini
-if(!defined('GCSECRET_KEY')) define('GCSECRET_KEY', '6LcmLYQUAAAAABVTn05T8F_sn2nSRHgd49gTmYei');
-if(!defined('GCSITE_KEY')) define('GCSITE_KEY', '6LcmLYQUAAAAAH7EnCZy_Aw-GIn1rW63Ka9W7IHt');
+if(!defined('GCSECRET_KEY')) define('GCSECRET_KEY', '6LcUDocUAAAAABKfGS-d65V3qRwHSptRCSQhhTTD');
+if(!defined('GCSITE_KEY')) define('GCSITE_KEY', '6LcUDocUAAAAACiC2rfcut-WgnFt1ebvVx_-J-Yj');
 
 // dan juga atur ini halaman berandanya disini
 if(!defined('BASE_URL')) define('BASE_URL', $home_url);
@@ -49,13 +49,13 @@ if(!defined('ROOT_PATH')) define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT']);
 // page given in URL parameter , default page is one (mbob opo iki)
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
-//set number of records per page
+//set nomor per halaman
 $records_per_page = 5;
 
 // calculate for the query LIMIT clause (kayanya disuruh hitung kueri batas login mboh deh)
 $from_record_num = ($records_per_page * $page) - $records_per_page;
 
-//load classes as needed
+//load kelas saat dibutuhkan saja
 spl_autoload_register(function ($class) {
    
     $class = strtolower($class);

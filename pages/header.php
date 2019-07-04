@@ -51,7 +51,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
   <script src="<?php echo BASE_URL."vendor/js/anime.min.js"?>"></script>
   
   <!-- JQuery CDN dari Microsoft -->
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" async></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   <?php include_once($_SERVER['DOCUMENT_ROOT'].'/pages/script.php'); ?>
 
   <?php
@@ -64,22 +64,12 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
   if($currentpage == $loginpage || $currentpage == $sekenlogin)
   {
     ?>
-    <script src='https://www.google.com/recaptcha/api.js?render=<?php echo GCSITE_KEY ?>'></script>
-    <script>
-      grecaptcha.ready(function() {
-        grecaptcha.execute(<?php echo GCSITE_KEY ?>, {action: 'masuk'})
-        .then(function(token) {
-        var recaptchaResponse = document.getElementById('recaptchaResponse');
-        recaptchaResponse.value = token;
-        });
-      });
-    </script>
+
     <?php
   }
   else if($currentpage == $signuppage || $currentpage == $sekendaftar)
   {
     ?>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript">
         var check = function() {
             if (document.getElementById('sandi').value ==

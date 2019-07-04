@@ -77,18 +77,13 @@ include(ROOT_PATH.'/pages/navbar.php');
               <div class="tab-pane fade" id="tabtwo" role="tabpanel">
                 <div class="col-md-12">
                   <ul class="nav nav-tabs">
-                    <!--
-                    <li class="nav-item">
-                      <a href="" class="active nav-link" data-toggle="pill" data-target="#tabones"><i class="fa fa-home"></i> Dasbor</a>
-                    </li>
-                  -->
                     <li class="nav-item"> <a href="" class="active nav-link" data-toggle="pill" data-target="#tabbuku"><i class="fas fa-book"></i> Buku</a>
                     </li>
                     <li class="nav-item"> <a href="" class="nav-link" data-toggle="pill" data-target="#tabpinjam"><i class="fas fa-receipt"></i> Peminjaman</a>
                     </li>
                     <li class="nav-item"> <a class="nav-link" href="" data-toggle="pill" data-target="#tabfours"><i class="fas fa-users"></i> Anggota</a>
                     </li>
-                    <li class="nav-item"> <a href="" class="nav-link" data-toggle="pill" data-target="#tabfives"><i class="fas fa-key"></i> Ganti Kata Sandi</a>
+                    <li class="nav-item"> <a href="" class="nav-link" data-toggle="pill" data-target="#tabfives"><i class="fas fa-edit"></i> Post</a>
                     </li>
                   </ul>
                   <div class="tab-content mt-2">
@@ -97,7 +92,7 @@ include(ROOT_PATH.'/pages/navbar.php');
                         <div class="container-fluid">
                           <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-between my-2">
-                              <a href="../pages/catalog" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-book-reader"></i> Detil Pustaka
+                              <a href="/pages/catalog" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-book-reader"></i> Detil Pustaka
                               </a>
                               <a href="" data-toggle="modal" data-target="#tambahbuku" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-plus"></i> Tambah Buku
                               </a>
@@ -109,17 +104,6 @@ include(ROOT_PATH.'/pages/navbar.php');
                         </div>
                       </div>
                       <div id="bukutable"></div>
-                      
-                      <!--<script async type="text/javascript">
-	                    $(document).ready(function(){
-		                    var url = "buku/tambahbuku.php";
-		                    jQuery('#tambahbuku').click(function(e) {
-		                      $('.tambahbuku').load(url,function(result){
-				                  $('#tambahbuku').modal({show:true});
-			                    });
-		                    });
-	                    });
-                      </script>-->
                     </div>
                     <div class="tab-pane fade" id="tabpinjam" role="tabpanel">
                       <div class="py-3 px-3">
@@ -138,10 +122,23 @@ include(ROOT_PATH.'/pages/navbar.php');
                       <div id="pinjamtable"></div>
                     </div>
                     <div class="tab-pane fade" id="tabfours" role="tabpanel">
-                      <p class="">Isi tab 4</p>
+                      <div class="py-3 px-3">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-12 d-flex align-items-center justify-content-between my-2">
+                              <a href="" data-toggle="modal" data-target="#tambahanggota" class="btn btn-outline-primary btn-lg d-block"><i class="fas fa-plus"></i> Tambah Anggota
+                              </a>
+                              <?php
+                              //include_once("anggota/tambahanggota.php");
+                              ?>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="anggotatable"></div>
                     </div>
                     <div class="tab-pane fade" id="tabfives" role="tabpanel">
-                      <p class="">Isi tab 5</p>
+                      <p class="">Maaf, belum dapat menampilkan post. Fitur akan datang di versi terbaru.</p>
                     </div>
                   </div>
                 </div>
@@ -166,6 +163,6 @@ else if($_SESSION['Level_Akses']=='Anggota')
 }
 else
 {
-  header("location:" . $_SERVER['DOCUMENT_ROOT']);
+  header("location:" . BASE_URL);
 }
 ?>

@@ -3,7 +3,7 @@
 define('DBHOST', 'localhost');
 define('DBUSER', 'root');
 define('DBPW', '');
-define('DBNAME', 'sipudalmstest');
+define('DBNAME', 'sipuda');
 
 $dbhost = DBHOST;
 $dbuser = DBUSER;

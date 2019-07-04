@@ -26,22 +26,11 @@ else if(!isset($cheking['id_peminjaman']))
 
     if(!$sqldel->rowCount())
     {
-        ?>
-        <span class="fas fa-times-circle fa-4x"></span>
-        <h2 class="display-3">Galat</h2>
-        <p>Hapus buku gagal</p>
-        <?php
-        //echo "<script>alert('Hapus buku gagal.');</script>";
+        echo stripslashes(json_encode('gagal'));
     }
     else
     {
-        ?>
-        <!--<script>alert("Buku telah dihapus.");</script>-->
-
-        <span class="fas fa-check-circle fa-4x"></span>
-        <h2 class="display-3">Sukses</h2>
-        <p class="py-2">Buku telah dihapus.</p>
-        <?php
+        echo stripslashes(json_encode('success'));
     }
 
 }

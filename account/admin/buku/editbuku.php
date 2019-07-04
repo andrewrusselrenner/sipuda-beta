@@ -41,7 +41,7 @@ else{
         </div>
         <div class="modal-body">
         <h3>Untuk Kolom Ketersediaan, mohon dicek kembali pilihannya berdasarkan apakah buku ada atau tidak. <strong>Nomor panggil</strong> tidak dapat disunting/edit!. </h3>
-        <form method="POST" action="<?php echo BASE_URL."account/admin/buku/editbook.php";?>" id="suntingbukuform">
+        <form method="POST" action="editbook.php" id="sunting<?php echo $nopangs; ?>" onsubmit="nyuntingbuku(this.id)">
           <div class="row">
             <div class="col-md-12">
               <div class="form-group"> <label for="juduls">Judul Buku</label> <input type="text" class="form-control" id="juduls" placeholder="Cth : Buku Panduan Memasak" required="required" name="juduls" value="<?php echo $juduls ?>">
@@ -137,8 +137,8 @@ else{
           </form>
         </div>
         <div class="modal-footer"> 
-          <!-- <input type="submit" name="sunting" id="sunting" class="btn btn-primary" value="Simpan" /> -->
-          <button class="btn btn-primary" id="sunting" name="sunting">Simpan</button>
+          <input type="submit" name="sunting" id="sunting" class="btn btn-primary" value="Simpan" />
+          <!-- <button class="btn btn-primary" id="sunting" name="sunting">Simpan</button> -->
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button> 
         </div>        
       </div>
@@ -168,3 +168,35 @@ else{
     </div>
   </div>
 </div>
+
+<script>
+/* script sunting buku untuk di dasbor */
+function nyuntingbuku(id) {
+    var nopang = id;
+    console.log("pass function say, yeay");
+    $(this).closest("form").attr('id').on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        console.log('oke');
+        alert($(this).attr("id"));
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) {
+                $('#suntingbuku').modal('hide'); 
+                $('#suksesmodal2').modal('show');
+                //$('#suksesmodal .modal-header .modal-title').html("Sukses");
+                $('#suksesmodal2 .modal-body').html(data);
+                $('#bukutable').load('buku/tabel.php');
+                console.log('sukses');
+                //$("#tambah").remove();
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+}
+</script>

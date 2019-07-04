@@ -68,10 +68,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/account/admin/index-engine.php');
                         <td>
                         <?php 
                         echo "<a href='".BASE_URL."pages/viewBook?nopang=".$nompang."' class='btn btn-outline-primary'><i class='fas fa-book-open '></i> Detil</a>";
-                        echo "<a href='' class='btn btn-outline-primary' data-toggle='modal' data-target='#suntingbuku".$nompang."'><i class='fas fa-edit'></i> Sunting</a>";
                         echo "<a href='' class='btn btn-outline-danger' data-toggle='modal' data-target='#hapusbuku".$nompang."'><i class='fas fa-trash '></i> Hapus</a>";
                         include("hapusbuku.php");
-                        include("suntingbuku.php");
+                        include("editbuku.php");
                         ?>
                         </td>
                         <td><?php echo $hitung;?></td>

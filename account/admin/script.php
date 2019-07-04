@@ -1,4 +1,43 @@
 <script>
+
+/* script sunting buku */
+$(document).ready(function () {
+    $("#suntingbukuform").on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) {
+                //$('#suntingform')[0].reset();
+                console.log("oke");
+                if(data.success == true){ // if true (1)
+                    console.log("reload");
+                    setTimeout(function(){// wait for 5 secs(2)
+                        location.reload(); // then reload the page.(3)
+                    }, 100);
+                }
+                $('#suntingbuku').modal('hide'); 
+                $('#suksesmodal2').modal('show');
+                //$('#suksesmodal .modal-header .modal-title').html("Sukses");
+                $('#suksesmodal2 .modal-body').html(data);
+                $('.modal').modal('hide');
+                $('#bukutable').load('buku/tabel.php');
+                //$("#tambah").remove();
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+     
+    $("#sunting").on('click', function() {
+        $("#suntingbukuform").submit();
+    });
+});
+
 /* script tambah buku */
 $(document).ready(function () {
     $("#tambahbukuform").on("submit", function(e) {
@@ -16,6 +55,8 @@ $(document).ready(function () {
                 $('#suksesmodal .modal-body').html(data);
                 $('#bukutable').load('buku/tabel.php');
                 //$("#tambah").remove();
+                console.log('terkirim');
+                console.log(formURL);
             },
             error: function(jqXHR, status, error) {
                 console.log(status + ": " + error);
@@ -49,50 +90,23 @@ $(document).ready(function () {
 		})
 		.done(function(data){
 			console.log(data);	
-			$('#dynamic-content').html('');    
-			$('#dynamic-content').html(data); // load response 
+			// $('#dynamic-content').html('');    
+			// $('#dynamic-content').html(data); // load response 
             $('#modal-loader').hide();		  // hide ajax loader
             $('#bukutable').load('buku/tabel.php');
-            $('#hapusbuku').modal('hide');	
+            $('#hapusbuku'+uid+'').modal('hide');
+            $('.modal-backdrop').remove();
+            $("body").removeClass("modal-open");
+           
 		})
 		.fail(function(){
 			$('#dynamic-content').html('<i class="fas fa-info"></i> Ada yang tidak beres. Coba lagi...');
             $('#modal-loader').hide();
-            $('#hapusbuku').modal('hide');
+            $('#hapusbuku<?php if(isset($nopangs)) echo $nopangs; ?>').modal('hide');
 		});
 		
 	});
 	
-});
-
-/* script sunting buku */
-$(document).ready(function () {
-    $("#suntingbukuform").on("submit", function(e) {
-        var postData = $(this).serializeArray();
-        var formURL = $(this).attr("action");
-        $.ajax({
-            url: formURL,
-            type: "POST",
-            data: postData,
-            success: function(data, textStatus, jqXHR) {
-                //$('#suntingform')[0].reset();
-                $('#suntingbuku').modal('hide'); 
-                $('#suksesmodal2').modal('show');
-                //$('#suksesmodal .modal-header .modal-title').html("Sukses");
-                $('#suksesmodal2 .modal-body').html(data);
-                $('#bukutable').load('buku/tabel.php');
-                //$("#tambah").remove();
-            },
-            error: function(jqXHR, status, error) {
-                console.log(status + ": " + error);
-            }
-        });
-        e.preventDefault();
-    });
-     
-    $("#sunting").on('click', function() {
-        $("#suntingbukuform").submit();
-    });
 });
 
 /* load tabel buku */
@@ -214,5 +228,50 @@ $(document).ready(function(){
 
     function pinjamTable(){
         $('#pinjamtable').load('peminjaman/tabel.php');
+    }
+
+/* script acc anggota */
+$(document).ready(function(){
+	
+	$(document).on('click', '#acc', function(e){
+		
+		e.preventDefault();
+		
+		var uid = $(this).data('id');   // it will get id of clicked row
+		
+		$('#dynamic-content4').html(''); // leave it blank before ajax call
+		$('#modal-loader4').show();      // load ajax loader
+		
+		$.ajax({
+			url: 'anggota/accmember.php',
+			type: 'GET',
+			data: 'id='+uid,
+			dataType: 'html'
+		})
+		.done(function(data){
+			console.log(data);	
+			$('#dynamic-content4').html('');    
+			$('#dynamic-content4').html(data); // load response 
+            $('#modal-loader4').hide();		  // hide ajax loader
+            $('#anggotatable').load('anggota/tabel.php');
+            $('#anggotamodal').modal('hide');	
+		})
+		.fail(function(){
+			$('#dynamic-content4').html('<i class="fas fa-info"></i> Ada yang tidak beres. Coba lagi...');
+            $('#modal-loader4').hide();
+            $('#anggotamodal').modal('hide');
+		});
+		
+	});
+	
+});
+
+/* load tabel anggota */
+$(document).ready(function(){
+      anggotaTable();
+    });
+
+    function anggotaTable(){
+        $('#anggotatable').load('anggota/tabel.php');
     }
 </script>

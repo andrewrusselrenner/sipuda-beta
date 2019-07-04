@@ -5,10 +5,10 @@ if(isset($_SESSION['masuk']) && $_SESSION['masuk']==true && $_SESSION['Level_Aks
 {
 $page_title = 'Halaman Profil';
 include(ROOT_PATH.'/pages/header.php');
-include(ROOT_PATH.'/pages/navbar.php');
 include_once(ROOT_PATH.'/config/timeago-function.php');
 ?>
 <body>
+<?php include(ROOT_PATH.'/pages/navbar.php'); ?>
 <div class="py-5 text-center section-parallax" style="background-image: url(&quot;<?php echo $coverbkg ?>&quot;);">
     <div class="container-fluid">
         <div class="row my-3 mx-auto col-md-6 p-3 section-lighttwo">
@@ -147,6 +147,6 @@ else if($_SESSION['Level_Akses']=='Admin')
 }
 else
 {
-  header("location:" . $_SERVER['DOCUMENT_ROOT']);
+  header("location:" . BASE_URL);
 }
 ?>

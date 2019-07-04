@@ -14,11 +14,6 @@ include('pages/header.php');
         <div class="p-5 mx-auto mx-md-0 ml-md-auto col-10 col-md-9">
           <h3 class="display-3">Selamat Datang di SIPUDA!</h3>
           <p class="mb-3 lead">SIPUDA merupakan portal perpustakaan daring untuk mempermudah anggota perpustakaan dalam mencari dan meminjam buku tanpa harus mencari secara manual. Selamat menikmati! </p>
-          <form class="form-inline d-flex justify-content-end">
-            <div class="input-group"> <input type="email" class="form-control" placeholder="Surel Anda" id="formcover1">
-              <div class="input-group-append"> <button class="btn btn-primary" type="button">Langganan</button> </div>
-            </div>
-          </form>
         </div>
       </div>
     </div>

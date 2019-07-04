@@ -6,11 +6,11 @@
     $query = "SELECT * FROM buku WHERE tgl_ditambahkan ORDER BY buku.tgl_ditambahkan DESC LIMIT 8";
     $raw_result = mysqli_query($con, $query);
 
-    if ($raw_result > 0) {
+    if ($raw_result->fetch_assoc() > 0) {
         ?>
     <div class="py-4 my-5">
         <div class="container-fluid my-5">
-        <h1 class="text-center mb-3">Buku baru telah tiba!</h1>
+        <h1 class="text-center mb-3">Buku populer patut dibaca!</h1>
             <div class="row w-5 mx-auto col-md-auto content-center">
                 <?php
                 while ($result = $raw_result->fetch_assoc()) {

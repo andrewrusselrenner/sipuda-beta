@@ -14,6 +14,8 @@ catch (PDOException $err)
 // koneksi ke db dengan metode MySQLi
 $con = @mysqli_connect($dbhost, $dbuser, $dbpw, $dbname);
 
+$kon = new mysqli($dbhost, $dbuser, $dbpw, $dbname);
+
 // cek koneksi
 if (mysqli_connect_errno())
   {
@@ -21,4 +23,9 @@ if (mysqli_connect_errno())
     throw new Exception(mysqli_connect_error(), mysqli_connect_errno());
   }
 
+if ($kon->connect_error)
+{
+  $errmsg = "Sambungan ke database bermasalah: ";
+  throw new Exception(mysqli_connect_error(), mysqli_connect_errno());
+}
 ?>

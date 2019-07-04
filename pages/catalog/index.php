@@ -61,7 +61,6 @@ include_once(ROOT_PATH.'/config/timeago-function.php');
         <h1 class="text-center mb-3">Menampilkan Semua Buku <small>v1</small></h1>
             <div class="row w-5 mx-auto col-md-auto content-center">
                 <?php
-                if ($raw_result > 0) {
                 while ($result = $raw_result->fetch_assoc()) {
                     ?>
                     <div class="col-md-3 py-2">
@@ -126,10 +125,6 @@ include_once(ROOT_PATH.'/config/timeago-function.php');
     </div>
 </div>
 <?php
-}
-else if($raw_result < 0)
-{
-    echo "<h4 class='display-3'>Belum ada buku nich di katalog :|</h4>";
-}
+
 include(ROOT_PATH.'/pages/footer.php');
 ?>

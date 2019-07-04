@@ -5,16 +5,16 @@
             <h5> <b>Utama</b> </h5>
             <ul class="list-unstyled">
               <li> <a href="/">Beranda</a> </li>
-              <li> <a href="/pages/gallery">Galeri</a> </li>
-              <li> <a href="/pages/news">Berita</a> </li>
+              <li> <a href="#">Galeri</a> </li>
+              <li> <a href="#">Berita</a> </li>
             </ul>
           </div>
           <div class="col-lg-3 col-6 p-3">
             <h5> <b>Informasi Bantuan</b> </h5>
             <ul class="list-unstyled">
-              <li> <a href="/pages/faq">Pertanyaan Yang Sering Diajukan</a> </li>
-              <li> <a href="/pages/librarian-lists">Daftar Pustakawan</a> </li>
-              <li> <a href="/pages/rooms">Ruang Perpustakaan</a> </li>
+              <li> <a href="#">Pertanyaan Yang Sering Diajukan</a> </li>
+              <li> <a href="#">Daftar Pustakawan</a> </li>
+              <li> <a href="#">Ruang Perpustakaan</a> </li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 p-3">

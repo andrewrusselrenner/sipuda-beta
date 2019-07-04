@@ -20,26 +20,28 @@ require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
         $categorys=$_POST['categorys'];
         $jenisbahans=$_POST['jenisbahans'];
 
-        $sql="UPDATE buku SET judul_buku=:judul, deskripsi_singkat=:deskripsiskt, pengarang=:pengarang, tahun_terbit=:tahunterbit, status_buku=:ketersediaan, isbn=:isbn, penerbit=:penerbit, tgl_perubahan=NOW(), gambar=:gambar, numofcopies=:salinan, lbr_halaman=:hal, kategori=:category, jenis_bahan=:jenisbahan WHERE buku.nomor_panggil=:bid";
+        $sql="UPDATE buku SET judul_buku='".$juduls."', deskripsi_singkat='".$deskripsis."', pengarang='".$pengarangs."', tahun_terbit='".$tahunterbits."', status_buku='".$ketersediaans."', isbn='".$isbns."', penerbit='".$penerbits."', tgl_perubahan=NOW(), gambar='".$gambars."', numofcopies='".$salinans."', lbr_halaman='".$hals."', kategori='".$categorys."', jenis_bahan='".$jenisbahans."' WHERE buku.nomor_panggil='".$bids."'";
         
-        $query = $dbs->prepare($sql);
-        $query->bindParam(':bid',$bids,PDO::PARAM_STR);
-        $query->bindParam(':judul',$juduls,PDO::PARAM_STR);
-        $query->bindParam(':deskripsiskt',$deskripsis,PDO::PARAM_STR);
-        $query->bindParam(':pengarang',$pengarangs,PDO::PARAM_STR);
-        $query->bindParam(':tahunterbit',$tahunterbits,PDO::PARAM_STR);
-        $query->bindParam(':ketersediaan',$ketersediaans,PDO::PARAM_STR);
-        $query->bindParam(':isbn',$isbns,PDO::PARAM_STR);
-        $query->bindParam(':penerbit',$penerbits,PDO::PARAM_STR);
-        $query->bindParam(':gambar',$gambars,PDO::PARAM_STR);
-        $query->bindParam(':salinan',$salinans,PDO::PARAM_STR);
-        $query->bindParam(':hal',$hals,PDO::PARAM_STR);
-        $query->bindParam(':category',$categorys,PDO::PARAM_STR);
-        $query->bindParam(':jenisbahan',$jenisbahans,PDO::PARAM_STR);
-        $query->execute();
-        $idpinjams = $dbs->lastInsertId();
+        $oke = $kon->query($sql);
 
-        if(isset($idpinjams))
+        // $query = $dbs->prepare($sql);
+        // $query->bindParam(':bid',$bids,PDO::PARAM_STR);
+        // $query->bindParam(':judul',$juduls,PDO::PARAM_STR);
+        // $query->bindParam(':deskripsiskt',$deskripsis,PDO::PARAM_STR);
+        // $query->bindParam(':pengarang',$pengarangs,PDO::PARAM_STR);
+        // $query->bindParam(':tahunterbit',$tahunterbits,PDO::PARAM_STR);
+        // $query->bindParam(':ketersediaan',$ketersediaans,PDO::PARAM_STR);
+        // $query->bindParam(':isbn',$isbns,PDO::PARAM_STR);
+        // $query->bindParam(':penerbit',$penerbits,PDO::PARAM_STR);
+        // $query->bindParam(':gambar',$gambars,PDO::PARAM_STR);
+        // $query->bindParam(':salinan',$salinans,PDO::PARAM_STR);
+        // $query->bindParam(':hal',$hals,PDO::PARAM_STR);
+        // $query->bindParam(':category',$categorys,PDO::PARAM_STR);
+        // $query->bindParam(':jenisbahan',$jenisbahans,PDO::PARAM_STR);
+        // $query->execute();
+        // $idpinjams = $dbs->lastInsertId();
+
+        if($oke)
         {
             $_SESSION['message']="Buku telah disunting";
             //echo "<script>window.confirm('Sukses. Silahkan refresh halaman untuk update tabel.')</script>";
@@ -50,7 +52,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/config/core.php');
         {
             $_SESSION['error']="Ada yang tidak beres. Mohon coba lagi.";
             //echo "<script>window.confirm('Galat, salah di sql nya kayanya')</script>";
-            echo "<h1 class='text-center'>Ada yang aneh".$idpinjams."</h1>";
+            echo "<h1 class='text-center'>Ada yang aneh".$bids."</h1>";
             //header("location:" . $_SERVER['HTTP_REFERER']);
         }
     }

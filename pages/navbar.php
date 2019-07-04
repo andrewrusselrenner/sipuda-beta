@@ -18,13 +18,13 @@
         <!-- Menu yang ditengah -->
         <ul class="navbar-nav mx-md-auto">
           <li class="nav-item"> 
-            <a class="nav-link js-scroll-trigger anime-link" href="/pages/features">Fasilitas</a> 
+            <a class="nav-link js-scroll-trigger anime-link" href="/pages/fasilitas">Fasilitas</a> 
           </li>
           <li class="nav-item"> 
             <a class="nav-link js-scroll-trigger anime-link" href="/pages/catalog">Katalog</a> 
           </li>
           <li class="nav-item"> 
-            <a class="nav-link js-scroll-trigger anime-link" href="/pages/about">Tentang</a> 
+            <a class="nav-link js-scroll-trigger anime-link" href="/pages/tentang">Tentang</a> 
           </li>
         </ul>
           <ul class="navbar-nav mx-3">

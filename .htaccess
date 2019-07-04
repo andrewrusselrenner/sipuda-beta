@@ -33,7 +33,10 @@ DirectoryIndex index.php /index.php
     Allow from all
 </Files>
 
-<FilesMatch search.php|viewBook.php|pinjam.php|login.php|index.php|logout.php|daftar.php|registerscript.php|tambahbuku.php|addbook.php|delbook.php|tabel.php|editbook.php|konfirmasi.php>
+<FilesMatch search.php|viewBook.php|pinjam.php|login.php|index.php|logout.php|daftar.php|registerscript.php|tambahbuku.php|addbook.php|delbook.php|tabel.php|editbook.php|konfirmasi.php|register-engine.php>
     Order Allow,Deny
     Allow from all
 </FilesMatch>
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit

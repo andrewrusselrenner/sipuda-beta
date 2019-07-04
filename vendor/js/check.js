@@ -29,7 +29,20 @@ $('document').ready(function(){
      });
     });
     */
-
+   $('#daftar').prop('disabled' , true);
+   $('#konfirmasikatasandi').on('keyup', function () {
+       var password = $("#sandi").val();
+       var confirmPassword = $("#konfirmasikatasandi").val();
+   
+       if (password != confirmPassword) {
+           $("#divCheckPassword").html("Tidak Cocok. Mohon dicocokkan!");
+       } else {
+           $("#divCheckPassword").html("Kata Sandi Cocok.");
+           sandi_state = true;
+           $('#daftar').prop('disabled' , false);
+       }
+   });
+   /*
    $('#sandi, #konfirmasikatasandi').on('keyup', function () {
         if ($('#sandi').val() == $('#konfirmasikatasandi').val()) {
             sandi_state = true;
@@ -38,7 +51,7 @@ $('document').ready(function(){
             sandi_state = false;
             $('#message').html('Tidak Cocok. Mohon dicocokkan.').css('color', 'red');
     });
-
+*/
 
      $('#surel').on('blur', function(){
         var surel = $('#surel').val();
@@ -68,7 +81,31 @@ $('document').ready(function(){
          }
         });
     });
-   
+    
+    $("#daftarForm").on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) { 
+                $('#daftarForm')[0].reset();
+                $('#suksesmodal').modal('show');
+                $('#suksesmodal .modal-header .modal-title').html("Oke");
+                $('#suksesmodal .modal-body').html(data);
+                $("#suksesmodal").on("hidden.bs.modal", function () {
+                    window.location.href = "/";
+                  });
+                
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+
     $('#daftar').on('click', function(){
         //var username = $('#username').val();
         var namad = $('#namad').val();
@@ -83,35 +120,11 @@ $('document').ready(function(){
         var tgllahir = $('#tgllahir').val();
         var gender = $('#gender').val();
         var jobstatus = $('#jobstatus').val();
-        if (email_state == false || sandi_state == false) {
+        if (email_state == false || sandi_state == true) {
          $('#error_msg').text('Mohon perbaiki error yang terdapat di kolom.');
        }else{
          // proceed with form submission
-         $.ajax({
-             url: 'daftar.php',
-             type: 'POST',
-             data: {
-                 'simpan' : 1,
-                 'namad' : namad,
-                 'namab' : namab,
-                 'surel' : surel,
-                 'nope' : nope,
-                 'almt' : almt,
-                 'sandi' : sandi,
-                 'idcard' : idcard,
-                 'noid' : noid,
-                 'tptlahir' : tptlahir,
-                 'tgllahir' : tgllahir,
-                 'gender' : gender,
-                 'jobstatus' : jobstatus,
-             },
-             success: function(response){
-                 alert('user saved');
-                 $('#username').val('');
-                 $('#surel').val('');
-                 $('#sandi').val('');
-             }
-         });
+         $("#daftarForm").submit();
         }
     });
    });

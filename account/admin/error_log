@@ -1,0 +1,12 @@
+[06-Jan-2019 19:39:59 Asia/Makassar] PHP Notice:  Undefined index: masuk in /home/sipudaxy/public_html/account/admin/index-engine.php on line 5
+[06-Jan-2019 19:39:59 Asia/Makassar] PHP Notice:  Undefined index: Level_Akses in /home/sipudaxy/public_html/account/admin/index.php on line 163
+[07-Jan-2019 00:05:23 Asia/Makassar] PHP Warning:  include_once(anggota/tambahanggota.php): failed to open stream: No such file or directory in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:05:23 Asia/Makassar] PHP Warning:  include_once(): Failed opening 'anggota/tambahanggota.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:18:00 Asia/Makassar] PHP Warning:  include_once(anggota/tambahanggota.php): failed to open stream: No such file or directory in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:18:00 Asia/Makassar] PHP Warning:  include_once(): Failed opening 'anggota/tambahanggota.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:35:17 Asia/Makassar] PHP Warning:  include_once(anggota/tambahanggota.php): failed to open stream: No such file or directory in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:35:17 Asia/Makassar] PHP Warning:  include_once(): Failed opening 'anggota/tambahanggota.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:46:32 Asia/Makassar] PHP Warning:  include_once(anggota/tambahanggota.php): failed to open stream: No such file or directory in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:46:32 Asia/Makassar] PHP Warning:  include_once(): Failed opening 'anggota/tambahanggota.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:46:52 Asia/Makassar] PHP Warning:  include_once(anggota/tambahanggota.php): failed to open stream: No such file or directory in /home/sipudaxy/public_html/account/admin/index.php on line 148
+[07-Jan-2019 00:46:52 Asia/Makassar] PHP Warning:  include_once(): Failed opening 'anggota/tambahanggota.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sipudaxy/public_html/account/admin/index.php on line 148

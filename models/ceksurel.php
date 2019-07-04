@@ -7,7 +7,7 @@ if(!empty($_POST["surel"]))
 	$email = $_POST["surel"];
     if (filter_var($surel, FILTER_VALIDATE_EMAIL)===true) 
     {
-		$sql ="SELECT surel FROM sipudalmstest WHERE surel=:email";
+		$sql ="SELECT surel FROM sipuda WHERE surel=:email";
         
         $query  = $dbs -> prepare($sql);
         $query-> bindParam(':email', $email, PDO::PARAM_STR);

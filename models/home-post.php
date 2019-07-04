@@ -26,7 +26,7 @@ $hasilg = $postg->fetchAll(PDO::FETCH_OBJ);
           <div class="card"> <img class="card-img-top" src="<?php echo $gambarh ?>" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title"><?php echo $judulh ?></h4>
-              <p class="card-text"><?php echo $deskh ?></p> <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text"><?php echo $deskh ?></p> <a href="#" class="btn btn-primary">Jelajahi</a>
             </div>
           </div>
         </div>

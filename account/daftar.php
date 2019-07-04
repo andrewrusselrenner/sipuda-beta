@@ -28,12 +28,31 @@ include_once(ROOT_PATH.'/pages/header.php');
             <h1 class="text-left mt-4 font-weight-bold">Pendaftaran</h1>
             <p class="mb-3 text-left">Sudah punya akun? <a href="<?php echo BASE_URL?>account/login">Masuk</a></p>
             <?php if(isset($error_msg)){ echo $error_msg; } ?>
-            <form class="text-left" name="daftar" method="POST" id="daftarForm" onsubmit="return pwvalidasi();">
-            <script>
+            <!-- Modal jika sukses -->
+            <div class="modal fade" id="suksesmodal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Sukses</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+    
+                  <div class="modal-body">
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="tutup" name="tutup" data-dismiss="modal">Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form class="text-left" name="daftar" method="POST" action="register-engine.php" id="daftarForm">
+            <!--<script>
                 function submitForm() {
                     document.getElementById("daftarForm").submit();
                 }
             </script>
+            -->
               <div class="form-row">
                 <div class="form-group col-md-6">     
                   <label for="namad">Nama Depan</label> 
@@ -46,7 +65,7 @@ include_once(ROOT_PATH.'/pages/header.php');
               </div>
               <div class="form-group"> 
                 <label for="email">Surel</label> 
-                <input type="email" class="form-control" name="email" id="surel" onBlur="cekEmail()" placeholder="contoh.email@contoh.com" required="required"> 
+                <input type="email" class="form-control" name="email" id="surel" placeholder="contoh.email@contoh.com" required="required"> 
                 <span id="statusemail" style="font-size:12px;"></span> 
               </div>
               <div class="form-row">
@@ -55,7 +74,8 @@ include_once(ROOT_PATH.'/pages/header.php');
                   <input type="password" class="form-control" name="sandi" id="sandi" placeholder="Atur kata sandi yang mudah diingat" required="required"> </div>
                 <div class="form-group col-md-6"> 
                   <label for="konfirmasikatasandi">Konfirmasi Kata Sandi</label> 
-                  <input type="password" class="form-control" name="konfirmasikatasandi" id="konfirmasikatasandi" placeholder="Masukkan kata sandi kembali" required="required"> 
+                  <input type="password" class="form-control" name="konfirmasikatasandi" id="konfirmasikatasandi" placeholder="Masukkan kata sandi kembali" required="required">
+                  <div id="divCheckPassword"></div> 
                   <span id='message'></span>
                 </div>
               </div>

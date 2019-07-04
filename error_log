@@ -1,0 +1,128 @@
+[06-Jan-2019 13:54:23 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 13:56:43 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 13:58:58 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 14:01:28 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 14:07:38 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 06:17:15 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 14:24:10 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 14:26:22 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 14:28:28 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 14:34:25 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 14:40:07 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 14:40:30 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 14:48:40 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 15:09:02 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:04:22 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:06:11 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:07:03 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:11:00 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:13:34 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:14:46 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:25:27 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:29:52 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 08:32:26 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 08:32:29 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 08:32:42 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 08:32:55 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 08:35:11 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 08:35:15 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 08:35:20 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 08:35:26 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 08:36:29 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' in /home/sipudaxy/public_html/config/dbconnection.php:7
+Stack trace:
+#0 /home/sipudaxy/public_html/index.php(2): require()
+#1 {main}
+  thrown in /home/sipudaxy/public_html/config/dbconnection.php on line 7
+[06-Jan-2019 16:39:30 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:42:29 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:42:30 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 08:49:46 UTC] PHP Warning:  session_start(): open(/var/cpanel/php/sessions/ea-php73/sess_ce5326fd2332564d523e518edf65ba7f, O_RDWR) failed: No such file or directory (2) in /home/sipudaxy/public_html/config/core.php on line 8
+[06-Jan-2019 08:49:46 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/cpanel/php/sessions/ea-php73) in /home/sipudaxy/public_html/config/core.php on line 8
+[06-Jan-2019 16:49:46 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:52:37 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:52:38 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:52:50 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:53:21 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:53:22 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:55:03 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:56:35 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:56:36 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 16:59:10 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:00:42 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:00:44 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:05:51 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:06:33 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:06:34 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:07:49 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:07:50 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:10:34 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:16:37 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:16:38 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:17:59 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:23:40 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:24:48 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:25:57 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:25:57 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:28:51 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:33:43 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:33:44 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:38:23 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 17:59:53 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 19:18:35 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 19:30:06 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 19:34:49 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 21:49:32 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 21:49:33 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 21:49:51 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 21:50:16 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 21:52:19 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 21:57:11 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 22:26:19 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 22:26:48 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 22:26:49 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 22:32:09 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 22:33:45 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 22:34:20 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 23:03:53 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[06-Jan-2019 23:51:29 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[07-Jan-2019 00:05:08 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[07-Jan-2019 00:15:36 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[07-Jan-2019 00:15:40 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[07-Jan-2019 01:01:33 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
+[07-Jan-2019 01:02:12 Asia/Makassar] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/sipudaxy/public_html/models/newbook.php on line 9
